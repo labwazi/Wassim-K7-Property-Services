@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wassim & K7 Property Services | Real Estate Mauritius — Consultancy, Build, Renovation, Estimation</title>
-<meta name="description" content="Wassim & K7 Property Services — Mauritius real estate consultancy, property valuation, renovation, construction advisory, and rentals. Interactive estimator, financing calculator, KYC, and build enquiry tools. Behind Oasis 2, Pereybere.">
+<meta name="description" content="Wassim & K7 Property Services — Mauritius real estate consultancy, property valuation, renovation, construction advisory, and rentals. 12 free interactive tools: estimator, financing, affordability, ROI, rent vs buy, renovation cost, purchase costs, land converter, currency, KYC, build enquiry.">
 <meta name="keywords" content="real estate Mauritius, property valuation Mauritius, property consultancy Mauritius, build house Mauritius, renovation Mauritius, buy property Mauritius, rent villa Mauritius, best place to live Mauritius, Mauritius real estate 2026">
 <meta name="author" content="Wassim & K7 Property Services">
 <meta property="og:title" content="Wassim & K7 Property Services | Real Estate Mauritius">
-<meta property="og:description" content="Mauritius property consultancy and construction advisory. Free property estimator, financing calculator, KYC, build enquiry.">
+<meta property="og:description" content="Mauritius property consultancy and construction advisory. 12 free property tools.">
 <meta property="og:type" content="website">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -129,11 +129,13 @@ section.alt{background:var(--surface);border-top:1px solid var(--border);border-
 
 /* TOOLS */
 .tools-shell{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.tools-tabs{display:flex;flex-wrap:wrap;gap:0;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto}
-.tools-tab{flex:0 0 auto;padding:14px 20px;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:0.01em;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:color .15s,border-color .15s}
+.tools-tabs{display:flex;flex-wrap:wrap;gap:0;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:thin}
+.tools-tabs::-webkit-scrollbar{height:6px}
+.tools-tabs::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:3px}
+.tools-tab{flex:0 0 auto;padding:13px 16px;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:0.01em;display:flex;align-items:center;gap:7px;white-space:nowrap;transition:color .15s,border-color .15s}
 .tools-tab:hover{color:var(--text)}
 .tools-tab.active{color:var(--accent);border-bottom-color:var(--accent);background:var(--surface-2)}
-.tools-tab i{font-size:12px}
+.tools-tab i{font-size:11px}
 .tools-body{padding:32px}
 .tool-panel{display:none}
 .tool-panel.active{display:block;animation:fadeIn .2s ease}
@@ -213,9 +215,7 @@ section.alt{background:var(--surface);border-top:1px solid var(--border);border-
 .team-avatar img{width:100%;height:100%;object-fit:cover}
 .team-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px}
 .team-card .role{font-size:12.5px;color:var(--accent);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:16px}
-.team-card p{font-size:13.5px;color:var(--text-muted);line-height:1.65;text-align:left;margin-bottom:14px}
-.team-skills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px}
-.skill{font-size:11px;padding:4px 10px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);color:var(--accent);border-radius:100px;font-weight:600}
+.team-card p{font-size:13.5px;color:var(--text-muted);line-height:1.65;text-align:left;margin-bottom:0}
 @media(max-width:700px){.team-grid{grid-template-columns:1fr}}
 
 /* CONTACT */
@@ -310,7 +310,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
       rental income, or building from the ground up.
     </p>
     <div class="hero-actions">
-      <a href="#tools" class="btn btn-primary btn-lg"><i class="fas fa-calculator"></i> Free Property Estimator</a>
+      <a href="#tools" class="btn btn-primary btn-lg"><i class="fas fa-calculator"></i> 12 Free Property Tools</a>
       <a href="#properties" class="btn btn-outline btn-lg"><i class="fas fa-home"></i> Browse Properties</a>
       <a href="https://wa.me/23057012560" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> +230 5701 2560</a>
     </div>
@@ -356,15 +356,21 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
 <section id="tools" class="alt">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-eyebrow">Interactive Tools</div>
-      <h2>Software built for Mauritius property</h2>
-      <p>Free, instant tools to help you estimate, plan, and pre-qualify — no signup required.</p>
+      <div class="sec-eyebrow">12 Interactive Tools</div>
+      <h2>All-in-one property toolkit</h2>
+      <p>Free, instant tools to help you estimate, plan, compare, and pre-qualify — no signup required.</p>
     </div>
     <div class="tools-shell">
       <div class="tools-tabs" id="toolTabs">
         <button class="tools-tab active" data-tool="estimator"><i class="fas fa-calculator"></i> Property Estimator</button>
         <button class="tools-tab" data-tool="financing"><i class="fas fa-money-bill-trend-up"></i> Financing</button>
+        <button class="tools-tab" data-tool="affordability"><i class="fas fa-hand-holding-dollar"></i> Affordability</button>
         <button class="tools-tab" data-tool="roi"><i class="fas fa-chart-pie"></i> Rental ROI</button>
+        <button class="tools-tab" data-tool="rentbuy"><i class="fas fa-scale-balanced"></i> Rent vs Buy</button>
+        <button class="tools-tab" data-tool="renovation"><i class="fas fa-trowel"></i> Renovation Cost</button>
+        <button class="tools-tab" data-tool="purchase"><i class="fas fa-file-invoice-dollar"></i> Purchase Costs</button>
+        <button class="tools-tab" data-tool="land"><i class="fas fa-ruler-combined"></i> Land Converter</button>
+        <button class="tools-tab" data-tool="currency"><i class="fas fa-coins"></i> Currency</button>
         <button class="tools-tab" data-tool="kyc"><i class="fas fa-id-card"></i> KYC Pre-Qualification</button>
         <button class="tools-tab" data-tool="buildForm"><i class="fas fa-hammer"></i> Build Enquiry</button>
         <button class="tools-tab" data-tool="wishlist"><i class="fas fa-heart"></i> My Wishlist</button>
@@ -446,6 +452,28 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
           </div>
         </div>
 
+        <!-- AFFORDABILITY -->
+        <div class="tool-panel" id="panel-affordability">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Monthly net income (Rs)</label><input type="number" id="affIncome" value="80000" step="5000"></div>
+                <div class="form-group"><label>Existing monthly debts (Rs)</label><input type="number" id="affDebt" value="0" step="1000"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Down payment available (Rs)</label><input type="number" id="affDown" value="1500000" step="100000"></div>
+                <div class="form-group"><label>Interest rate (% p.a.)</label><input type="number" id="affRate" value="6.5" step="0.1" min="0"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Term (years)</label><input type="number" id="affTerm" value="20" min="1" max="40"></div>
+                <div class="form-group"><label>Debt-to-income cap (%)</label><input type="number" id="affDTI" value="35" min="10" max="60"></div>
+              </div>
+              <button class="btn btn-primary" onclick="runAffordability()"><i class="fas fa-bolt"></i> Calculate affordability</button>
+            </div>
+            <div><div class="result-box" id="affResult"><div class="result-empty">Enter your income and debt to see how much you can borrow.</div></div></div>
+          </div>
+        </div>
+
         <!-- ROI -->
         <div class="tool-panel" id="panel-roi">
           <div class="tool-grid">
@@ -461,6 +489,143 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
               <button class="btn btn-primary" onclick="runROI()"><i class="fas fa-bolt"></i> Calculate ROI</button>
             </div>
             <div><div class="result-box" id="roiResult"><div class="result-empty">Enter rental details to see gross yield, net yield, and annual net income.</div></div></div>
+          </div>
+        </div>
+
+        <!-- RENT vs BUY -->
+        <div class="tool-panel" id="panel-rentbuy">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Property price (Rs)</label><input type="number" id="rbPrice" value="8000000" step="100000"></div>
+                <div class="form-group"><label>Down payment (%)</label><input type="number" id="rbDown" value="20" min="0" max="100"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Interest rate (% p.a.)</label><input type="number" id="rbRate" value="6.5" step="0.1"></div>
+                <div class="form-group"><label>Term (years)</label><input type="number" id="rbTerm" value="20" min="1" max="40"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Monthly rent (Rs)</label><input type="number" id="rbRent" value="30000" step="1000"></div>
+                <div class="form-group"><label>Years to stay</label><input type="number" id="rbYears" value="10" min="1" max="40"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Annual appreciation (%)</label><input type="number" id="rbApp" value="3" step="0.5"></div>
+                <div class="form-group"><label>Annual rent increase (%)</label><input type="number" id="rbRentInc" value="3" step="0.5"></div>
+              </div>
+              <button class="btn btn-primary" onclick="runRentBuy()"><i class="fas fa-bolt"></i> Compare</button>
+            </div>
+            <div><div class="result-box" id="rbResult"><div class="result-empty">Compare the total cost of renting vs buying over your planned stay.</div></div></div>
+          </div>
+        </div>
+
+        <!-- RENOVATION COST -->
+        <div class="tool-panel" id="panel-renovation">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Renovation type</label>
+                  <select id="renType">
+                    <option value="cosmetic">Cosmetic (paint, fixtures)</option>
+                    <option value="standard" selected>Standard (kitchen/bath refresh)</option>
+                    <option value="premium">Premium (full redesign)</option>
+                    <option value="luxury">Luxury / high-end</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Area (m²)</label><input type="number" id="renArea" value="120" step="5"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Kitchen budget (Rs)</label><input type="number" id="renKitchen" value="250000" step="25000"></div>
+                <div class="form-group"><label>Bathrooms count</label><input type="number" id="renBaths" value="2" min="0" step="1"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Roof work?</label>
+                  <select id="renRoof"><option value="0">No</option><option value="500000">Full roof</option><option value="250000">Repair</option></select>
+                </div>
+                <div class="form-group"><label>Contingency (%)</label><input type="number" id="renCont" value="10" min="0" max="30"></div>
+              </div>
+              <button class="btn btn-primary" onclick="runRenovation()"><i class="fas fa-bolt"></i> Estimate renovation cost</button>
+            </div>
+            <div><div class="result-box" id="renResult"><div class="result-empty">Enter your renovation scope to get a cost estimate.</div></div></div>
+          </div>
+        </div>
+
+        <!-- PURCHASE COSTS -->
+        <div class="tool-panel" id="panel-purchase">
+          <div class="tool-grid">
+            <div>
+              <div class="form-group"><label>Property price (Rs)</label><input type="number" id="pcPrice" value="8000000" step="100000"></div>
+              <div class="form-row">
+                <div class="form-group"><label>Buyer type</label>
+                  <select id="pcBuyer">
+                    <option value="citizen">Mauritian citizen</option>
+                    <option value="resident">Resident (expatriate)</option>
+                    <option value="non-citizen">Non-citizen</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Property scheme</label>
+                  <select id="pcScheme">
+                    <option value="standard">Standard (open market)</option>
+                    <option value="g2">G+2 apartment</option>
+                    <option value="pds">PDS</option>
+                    <option value="res">RES</option>
+                    <option value="smart">Smart City</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="runPurchaseCosts()"><i class="fas fa-bolt"></i> Calculate purchase costs</button>
+            </div>
+            <div><div class="result-box" id="pcResult"><div class="result-empty">Enter the property price and buyer details to see total transaction costs.</div></div></div>
+          </div>
+        </div>
+
+        <!-- LAND CONVERTER -->
+        <div class="tool-panel" id="panel-land">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Value</label><input type="number" id="landVal" value="20" step="0.1"></div>
+                <div class="form-group"><label>Unit</label>
+                  <select id="landUnit">
+                    <option value="perch">Perch</option>
+                    <option value="m2">Square metre (m²)</option>
+                    <option value="arpent">Arpent</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="toise">Toise</option>
+                    <option value="sqft">Square foot (ft²)</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="runLandConverter()"><i class="fas fa-bolt"></i> Convert</button>
+            </div>
+            <div><div class="result-box" id="landResult"><div class="result-empty">Enter a land area and see all equivalent units.</div></div></div>
+          </div>
+        </div>
+
+        <!-- CURRENCY -->
+        <div class="tool-panel" id="panel-currency">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Amount</label><input type="number" id="curAmt" value="1000000" step="1000"></div>
+                <div class="form-group"><label>From</label>
+                  <select id="curFrom">
+                    <option value="MUR">MUR — Mauritian Rupee</option>
+                    <option value="USD">USD — US Dollar</option>
+                    <option value="EUR">EUR — Euro</option>
+                    <option value="GBP">GBP — British Pound</option>
+                    <option value="ZAR">ZAR — South African Rand</option>
+                    <option value="INR">INR — Indian Rupee</option>
+                    <option value="AED">AED — UAE Dirham</option>
+                    <option value="CHF">CHF — Swiss Franc</option>
+                    <option value="CAD">CAD — Canadian Dollar</option>
+                    <option value="AUD">AUD — Australian Dollar</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="runCurrency()"><i class="fas fa-bolt"></i> Convert</button>
+              <div style="margin-top:12px;font-size:11.5px;color:var(--text-dim);line-height:1.55"><i class="fas fa-circle-info" style="color:var(--accent)"></i> Indicative rates — actual bank rates vary. For planning only, not financial advice.</div>
+            </div>
+            <div><div class="result-box" id="curResult"><div class="result-empty">Enter an amount and see the equivalent in major currencies.</div></div></div>
           </div>
         </div>
 
@@ -639,36 +804,22 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
 <section id="team" class="alt">
   <div class="container">
     <div class="sec-head">
-      <div class="sec-eyebrow">Our Team</div>
-      <h2>The people behind the service</h2>
+      <div class="sec-eyebrow">Our Leadership</div>
+      <h2>Meet our 2 Heads of Department</h2>
       <p>Senior expertise you'll actually speak to — not a call centre.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
         <div class="team-avatar"><img src="images/wassim.jpg" alt="Wassim" onerror="this.style.display='none';this.parentNode.textContent='W'"></div>
         <h3>Wassim</h3>
-        <div class="role">Principal Consultant</div>
+        <div class="role">Head of Consultancy & Advisory</div>
         <p>Wassim leads our consultancy, valuation, and construction advisory services. With deep experience in the Mauritian market across residential, investment, and build projects, he advises clients on everything from plot selection to negotiation and post-purchase planning.</p>
-        <div class="team-skills">
-          <span class="skill">Valuation</span>
-          <span class="skill">Investment Advisory</span>
-          <span class="skill">Build Advisory</span>
-          <span class="skill">Negotiation</span>
-          <span class="skill">Market Analysis</span>
-        </div>
       </div>
       <div class="team-card">
         <div class="team-avatar"><img src="images/kessaven.jpg" alt="Kessaven" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
         <h3>Kessaven</h3>
-        <div class="role">Property Operations Lead</div>
+        <div class="role">Head of Property Operations</div>
         <p>Kessaven manages our property portfolio, rental operations, and client coordination. He oversees listings, guest management, and the day-to-day running of managed properties — ensuring owners and tenants get a smooth, professional experience.</p>
-        <div class="team-skills">
-          <span class="skill">Rental Management</span>
-          <span class="skill">Client Relations</span>
-          <span class="skill">Property Search</span>
-          <span class="skill">Coordination</span>
-          <span class="skill">KYC & Compliance</span>
-        </div>
       </div>
     </div>
   </div>
@@ -764,19 +915,24 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
         <a href="#services">Rental Management</a>
       </div>
       <div class="footer-col">
-        <h4>Tools</h4>
+        <h4>Calculators</h4>
         <a href="#tools">Property Estimator</a>
-        <a href="#tools">Financing Calculator</a>
+        <a href="#tools">Financing</a>
+        <a href="#tools">Affordability</a>
         <a href="#tools">Rental ROI</a>
-        <a href="#tools">KYC Pre-Qualification</a>
-        <a href="#properties">My Wishlist</a>
+        <a href="#tools">Rent vs Buy</a>
+        <a href="#tools">Renovation Cost</a>
+        <a href="#tools">Purchase Costs</a>
       </div>
       <div class="footer-col">
-        <h4>Contact</h4>
+        <h4>More Tools</h4>
+        <a href="#tools">Land Converter</a>
+        <a href="#tools">Currency Converter</a>
+        <a href="#tools">KYC Pre-Qualification</a>
+        <a href="#tools">Build Enquiry</a>
+        <a href="#properties">My Wishlist</a>
         <a href="https://wa.me/23057012560" target="_blank">+230 5701 2560</a>
-        <a href="https://wa.me/23059237053" target="_blank">+230 5923 7053</a>
         <a href="mailto:bookings@superdealsmauritius.com">bookings@superdealsmauritius.com</a>
-        <p style="margin-top:8px">Behind Oasis 2<br>Pereybere, Mauritius</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -784,7 +940,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
       <span>Real Estate Mauritius · Consultancy · Build · Renovation · Estimation</span>
     </div>
     <div class="footer-seo">
-      Real estate Mauritius · Property valuation Mauritius · Property consultancy Mauritius · Build house Mauritius · Renovation Mauritius · Buy property Mauritius · Rent villa Mauritius · Best places to live Mauritius · Mauritius real estate 2026 · Villa Grand Baie · Apartment Pereybere · Tamarin property · Flic en Flac rentals · Moka property · Investment property Mauritius · Foreign buyer Mauritius · Residence permit Mauritius · Build with us Mauritius · Property estimator Mauritius · Rental yield Mauritius
+      Real estate Mauritius · Property valuation Mauritius · Property consultancy Mauritius · Build house Mauritius · Renovation Mauritius · Buy property Mauritius · Rent villa Mauritius · Best places to live Mauritius · Mauritius real estate 2026 · Villa Grand Baie · Apartment Pereybere · Tamarin property · Flic en Flac rentals · Moka property · Investment property Mauritius · Foreign buyer Mauritius · Residence permit Mauritius · Build with us Mauritius · Property estimator Mauritius · Rental yield Mauritius · Mortgage calculator Mauritius · Affordability calculator Mauritius · Rent vs buy Mauritius · Stamp duty calculator Mauritius · Land converter Mauritius · Perch to square metre · Arpent to m² · Property tools Mauritius
     </div>
   </div>
 </footer>
@@ -798,68 +954,13 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:48px
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ============ PROPERTY DATA (5 featured) ============ */
+/* ============ PROPERTY DATA ============ */
 const properties = [
-  {
-    id:'p1',
-    title:'Grand Baie Villa — Pool & Jacuzzi',
-    location:'Grand Baie',
-    price:'Contact for pricing',
-    badge:'Rent',
-    type:'rent',
-    summary:'Private holiday villa in the heart of Grand Baie with private pool, jacuzzi, and premium guest amenities. Highly rated.',
-    image:'images/superdeals-grandbaie-luxury.jpg',
-    fb:'https://www.facebook.com/superdealsmauritius',
-    tt:'https://tiktok.com/@superdealsmauritius'
-  },
-  {
-    id:'p2',
-    title:'End-of-Winter Special — Grand Baie',
-    location:'Grand Baie',
-    price:'Rs 2,500 / night',
-    badge:'Rent',
-    type:'rent',
-    summary:'2-bedroom apartment with fully equipped kitchen, washing machine, Wi-Fi, common pool, parking. 2–4 persons. 6-min drive to beach.',
-    image:'images/alain.jpg',
-    fb:'https://www.facebook.com/share/p/19kmF318jR/',
-    tt:'https://tiktok.com/@superdealsmauritius'
-  },
-  {
-    id:'p3',
-    title:'Pereybere Villa Private Pool — 3 Bedrooms',
-    location:'Pereybere',
-    price:'Contact for pricing',
-    badge:'Rent',
-    type:'rent',
-    summary:'Modern 3-bedroom private villa, 10-minute walk to the beach. Air-conditioned, quality furnishings, and comfortable living spaces.',
-    image:'images/superdeals-pereybere-villa.jpg',
-    fb:'https://www.facebook.com/superdealsmauritius',
-    tt:'https://tiktok.com/@superdealsmauritius'
-  },
-  {
-    id:'p4',
-    title:'Riambel Private Villa — 6 Bedrooms',
-    location:'Riambel',
-    price:'Contact for pricing',
-    badge:'Rent',
-    type:'rent',
-    summary:'Six-bedroom holiday villa in the south with private pool, spacious living areas, and fully equipped kitchen. 10-minute walk to the beach.',
-    image:'images/superdeals-riambel-villa.jpg',
-    fb:'https://www.facebook.com/superdealsmauritius',
-    tt:'https://tiktok.com/@superdealsmauritius'
-  },
-  {
-    id:'p5',
-    title:'Residential Land Plots — Grand Baie',
-    location:'Grand Baie',
-    price:'Rs 2.6M – Rs 3.3M',
-    badge:'Sale',
-    type:'sale',
-    summary:'11 residential plots, 6–7 perches each, with approved building permits. 2-minute drive to Domaine Alizées. Rue de la Paie, Petit Raffray.',
-    image:'images/wa1.jpg',
-    fb:'https://www.facebook.com/superdealsmauritius',
-    tt:'https://tiktok.com/@superdealsmauritius'
-  }
+  { id:'p1', title:'Grand Baie Villa — Pool & Jacuzzi', location:'Grand Baie', price:'Contact for pricing', badge:'Rent', type:'rent', summary:'Private holiday villa in the heart of Grand Baie with private pool, jacuzzi, and premium guest amenities. Highly rated.', image:'images/superdeals-grandbaie-luxury.jpg', fb:'https://www.facebook.com/superdealsmauritius', tt:'https://tiktok.com/@superdealsmauritius' },
+  { id:'p2', title:'End-of-Winter Special — Grand Baie', location:'Grand Baie', price:'Rs 2,500 / night', badge:'Rent', type:'rent', summary:'2-bedroom apartment with fully equipped kitchen, washing machine, Wi-Fi, common pool, parking. 2–4 persons. 6-min drive to beach.', image:'images/alain.jpg', fb:'https://www.facebook.com/share/p/19kmF318jR/', tt:'https://tiktok.com/@superdealsmauritius' },
+  { id:'p3', title:'Pereybere Villa Private Pool — 3 Bedrooms', location:'Pereybere', price:'Contact for pricing', badge:'Rent', type:'rent', summary:'Modern 3-bedroom private villa, 10-minute walk to the beach. Air-conditioned, quality furnishings, and comfortable living spaces.', image:'images/superdeals-pereybere-villa.jpg', fb:'https://www.facebook.com/superdealsmauritius', tt:'https://tiktok.com/@superdealsmauritius' },
+  { id:'p4', title:'Riambel Private Villa — 6 Bedrooms', location:'Riambel', price:'Contact for pricing', badge:'Rent', type:'rent', summary:'Six-bedroom holiday villa in the south with private pool, spacious living areas, and fully equipped kitchen. 10-minute walk to the beach.', image:'images/superdeals-riambel-villa.jpg', fb:'https://www.facebook.com/superdealsmauritius', tt:'https://tiktok.com/@superdealsmauritius' },
+  { id:'p5', title:'Residential Land Plots — Grand Baie', location:'Grand Baie', price:'Rs 2.6M – Rs 3.3M', badge:'Sale', type:'sale', summary:'11 residential plots, 6–7 perches each, with approved building permits. 2-minute drive to Domaine Alizées. Rue de la Paie, Petit Raffray.', image:'images/wa1.jpg', fb:'https://www.facebook.com/superdealsmauritius', tt:'https://tiktok.com/@superdealsmauritius' }
 ];
 
 /* ============ RENDER PROPERTIES ============ */
@@ -890,13 +991,9 @@ function renderProperties(){
   }).join('');
 }
 
-/* ============ WISHLIST (localStorage) ============ */
-function getWishlist(){
-  try { return JSON.parse(localStorage.getItem('wk7_wishlist') || '[]'); } catch(e){ return []; }
-}
-function saveWishlist(list){
-  try { localStorage.setItem('wk7_wishlist', JSON.stringify(list)); } catch(e){}
-}
+/* ============ WISHLIST ============ */
+function getWishlist(){ try { return JSON.parse(localStorage.getItem('wk7_wishlist') || '[]'); } catch(e){ return []; } }
+function saveWishlist(list){ try { localStorage.setItem('wk7_wishlist', JSON.stringify(list)); } catch(e){} }
 function toggleWishlist(id, btn){
   let list = getWishlist();
   const i = list.indexOf(id);
@@ -905,16 +1002,11 @@ function toggleWishlist(id, btn){
   saveWishlist(list);
   renderWishlistPanel();
 }
-function clearWishlist(){
-  saveWishlist([]); renderProperties(); renderWishlistPanel(); showToast('Wishlist cleared');
-}
+function clearWishlist(){ saveWishlist([]); renderProperties(); renderWishlistPanel(); showToast('Wishlist cleared'); }
 function renderWishlistPanel(){
   const box = document.getElementById('wishlistResult');
   const ids = getWishlist();
-  if(!ids.length){
-    box.innerHTML = '<div class="result-empty">Your wishlist is empty. Tap the heart icon on any property to save it here.</div>';
-    return;
-  }
+  if(!ids.length){ box.innerHTML = '<div class="result-empty">Your wishlist is empty. Tap the heart icon on any property to save it here.</div>'; return; }
   const saved = properties.filter(p=>ids.includes(p.id));
   let html = `<div style="margin-bottom:12px;font-size:12.5px;color:var(--text-muted)">You have <strong style="color:var(--accent)">${saved.length}</strong> saved propert${saved.length===1?'y':'ies'}.</div>`;
   saved.forEach(p => {
@@ -967,11 +1059,9 @@ function runEstimator(){
   const depreciation = Math.min(age * 0.015, 0.40);
   const buildValue = built * (buildCost[quality]||35000) * (condMulti[cond]||0.7) * (1 - depreciation);
   const total = landValue + buildValue;
-
   const fmt = n => 'Rs ' + Math.round(n).toLocaleString('en-US');
 
-  const box = document.getElementById('estResult');
-  box.innerHTML = `
+  document.getElementById('estResult').innerHTML = `
     <div class="result-line"><span>Land area</span><span>${landM2.toLocaleString('en-US',{maximumFractionDigits:0})} m²</span></div>
     <div class="result-line"><span>Land value (est.)</span><span>${fmt(landValue)}</span></div>
     <div class="result-line"><span>Building area</span><span>${built} m²</span></div>
@@ -991,7 +1081,6 @@ function runFinancing(){
   const downPct = parseFloat(document.getElementById('finDown').value)||0;
   const rate = parseFloat(document.getElementById('finRate').value)||0;
   const term = parseFloat(document.getElementById('finTerm').value)||1;
-
   const down = price * downPct/100;
   const loan = price - down;
   const monthlyRate = rate/100/12;
@@ -999,8 +1088,8 @@ function runFinancing(){
   const monthly = monthlyRate > 0 ? loan * monthlyRate / (1 - Math.pow(1+monthlyRate,-n)) : loan/n;
   const totalPaid = monthly * n;
   const totalInterest = totalPaid - loan;
-
   const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+
   document.getElementById('finResult').innerHTML = `
     <div class="result-line"><span>Down payment</span><span>${fmt(down)}</span></div>
     <div class="result-line"><span>Loan amount</span><span>${fmt(loan)}</span></div>
@@ -1014,21 +1103,47 @@ function runFinancing(){
     </div>`;
 }
 
+/* ============ AFFORDABILITY ============ */
+function runAffordability(){
+  const income = parseFloat(document.getElementById('affIncome').value)||0;
+  const debt = parseFloat(document.getElementById('affDebt').value)||0;
+  const down = parseFloat(document.getElementById('affDown').value)||0;
+  const rate = parseFloat(document.getElementById('affRate').value)||0;
+  const term = parseFloat(document.getElementById('affTerm').value)||1;
+  const dtiPct = parseFloat(document.getElementById('affDTI').value)||35;
+
+  const maxMonthly = Math.max(income * dtiPct/100 - debt, 0);
+  const r = rate/100/12;
+  const n = term*12;
+  const maxLoan = r > 0 ? maxMonthly * (1 - Math.pow(1+r, -n)) / r : maxMonthly * n;
+  const maxPrice = maxLoan + down;
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+
+  document.getElementById('affResult').innerHTML = `
+    <div class="result-line"><span>Max monthly payment (DTI ${dtiPct}%)</span><span>${fmt(maxMonthly)}</span></div>
+    <div class="result-line"><span>Maximum loan amount</span><span>${fmt(maxLoan)}</span></div>
+    <div class="result-line"><span>Down payment</span><span>${fmt(down)}</span></div>
+    <div class="result-total"><span>Estimated max property price</span><span>${fmt(maxPrice)}</span></div>
+    <div class="result-note">Indicative only. Banks also assess credit score, employment, savings history, and total exposure. A conservative DTI of 30–35% is recommended for comfortable repayment.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi Wassim & K7, I would like help with affordability. My estimated max price is around '+fmt(maxPrice)+'.')}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Discuss with us</a>
+    </div>`;
+}
+
 /* ============ ROI ============ */
 function runROI(){
   const price = parseFloat(document.getElementById('roiPrice').value)||0;
   const rent = parseFloat(document.getElementById('roiRent').value)||0;
   const occ = parseFloat(document.getElementById('roiOcc').value)/100||0;
   const expPct = parseFloat(document.getElementById('roiExp').value)/100||0;
-
   const annualGross = rent * 12 * occ;
   const annualExpenses = annualGross * expPct;
   const annualNet = annualGross - annualExpenses;
   const grossYield = (rent*12/price)*100;
   const netYield = (annualNet/price)*100;
   const payback = annualNet > 0 ? price/annualNet : 0;
-
   const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+
   document.getElementById('roiResult').innerHTML = `
     <div class="result-line"><span>Annual gross income</span><span>${fmt(annualGross)}</span></div>
     <div class="result-line"><span>Annual expenses</span><span>${fmt(annualExpenses)}</span></div>
@@ -1036,7 +1151,174 @@ function runROI(){
     <div class="result-total"><span>Net yield</span><span>${netYield.toFixed(2)}%</span></div>
     <div class="result-line" style="margin-top:12px"><span>Gross yield</span><span>${grossYield.toFixed(2)}%</span></div>
     <div class="result-line"><span>Payback period</span><span>${payback?payback.toFixed(1)+' years':'—'}</span></div>
-    <div class="result-note">Net yield above is after expenses and occupancy. Represents a stabilised long-term rental scenario — short-term rentals may achieve higher gross but higher costs.</div>
+    <div class="result-note">Net yield is after expenses and occupancy. Represents a stabilised long-term rental scenario — short-term rentals may achieve higher gross but higher costs.</div>
+  `;
+}
+
+/* ============ RENT vs BUY ============ */
+function runRentBuy(){
+  const price = parseFloat(document.getElementById('rbPrice').value)||0;
+  const downPct = parseFloat(document.getElementById('rbDown').value)||0;
+  const rate = parseFloat(document.getElementById('rbRate').value)||0;
+  const term = parseFloat(document.getElementById('rbTerm').value)||1;
+  const rent = parseFloat(document.getElementById('rbRent').value)||0;
+  const years = parseFloat(document.getElementById('rbYears').value)||1;
+  const app = parseFloat(document.getElementById('rbApp').value)/100||0;
+  const rentInc = parseFloat(document.getElementById('rbRentInc').value)/100||0;
+
+  const down = price * downPct/100;
+  const loan = price - down;
+  const r = rate/100/12;
+  const n = term*12;
+  const monthly = r > 0 ? loan * r / (1 - Math.pow(1+r, -n)) : loan/n;
+  const monthsPaid = Math.min(years*12, n);
+
+  let balance = loan;
+  for(let i=0; i<monthsPaid; i++){
+    const interest = balance * r;
+    const principal = monthly - interest;
+    balance -= principal;
+    if(balance < 0) balance = 0;
+  }
+  const finalValue = price * Math.pow(1+app, years);
+  const equity = finalValue - balance;
+  const maintenance = price * 0.01 * years;
+  const mortgagePaid = monthly * monthsPaid;
+  const buyNetCost = down + mortgagePaid + maintenance - equity;
+
+  let totalRent = 0;
+  let currentRent = rent;
+  for(let y=0; y<Math.floor(years); y++){
+    totalRent += currentRent * 12;
+    currentRent *= (1+rentInc);
+  }
+  const frac = years - Math.floor(years);
+  if(frac > 0) totalRent += currentRent * 12 * frac;
+
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+  const diff = buyNetCost - totalRent;
+  const winner = diff < 0 ? 'Buying' : 'Renting';
+  const saving = Math.abs(diff);
+
+  document.getElementById('rbResult').innerHTML = `
+    <div class="result-line"><span>Upfront cash (down payment)</span><span>${fmt(down)}</span></div>
+    <div class="result-line"><span>Mortgage paid over ${years} yrs</span><span>${fmt(mortgagePaid)}</span></div>
+    <div class="result-line"><span>Maintenance (1%/yr)</span><span>${fmt(maintenance)}</span></div>
+    <div class="result-line"><span>Final property value</span><span>${fmt(finalValue)}</span></div>
+    <div class="result-line"><span>Loan balance at sale</span><span>${fmt(balance)}</span></div>
+    <div class="result-line"><span>Equity at sale</span><span>${fmt(equity)}</span></div>
+    <div class="result-line"><span>Net cost of buying</span><span>${fmt(buyNetCost)}</span></div>
+    <div class="result-line"><span>Total cost of renting</span><span>${fmt(totalRent)}</span></div>
+    <div class="result-total"><span>${winner} wins by</span><span>${fmt(saving)}</span></div>
+    <div class="result-note">Net buying cost = down payment + mortgage paid + maintenance − equity at sale. Ignores transaction fees, taxes, and opportunity cost of the down payment. Buying usually wins over longer horizons in appreciating markets.</div>
+  `;
+}
+
+/* ============ RENOVATION COST ============ */
+function runRenovation(){
+  const type = document.getElementById('renType').value;
+  const area = parseFloat(document.getElementById('renArea').value)||0;
+  const kitchen = parseFloat(document.getElementById('renKitchen').value)||0;
+  const baths = parseFloat(document.getElementById('renBaths').value)||0;
+  const roof = parseFloat(document.getElementById('renRoof').value)||0;
+  const contPct = parseFloat(document.getElementById('renCont').value)||0;
+  const rates = {cosmetic:4000, standard:9000, premium:18000, luxury:35000};
+  const bathCost = 200000;
+  const base = area * rates[type];
+  const bathTotal = baths * bathCost;
+  const subtotal = base + kitchen + bathTotal + roof;
+  const contingency = subtotal * contPct/100;
+  const total = subtotal + contingency;
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+
+  document.getElementById('renResult').innerHTML = `
+    <div class="result-line"><span>Base renovation (${area} m² @ ${fmt(rates[type])}/m²)</span><span>${fmt(base)}</span></div>
+    <div class="result-line"><span>Kitchen</span><span>${fmt(kitchen)}</span></div>
+    <div class="result-line"><span>Bathrooms (${baths} × ${fmt(bathCost)})</span><span>${fmt(bathTotal)}</span></div>
+    <div class="result-line"><span>Roof work</span><span>${fmt(roof)}</span></div>
+    <div class="result-line"><span>Contingency (${contPct}%)</span><span>${fmt(contingency)}</span></div>
+    <div class="result-total"><span>Estimated total</span><span>${fmt(total)}</span></div>
+    <div class="result-note">Indicative budget. Actual costs depend on layout, materials, and contractor quotes. Always get 2–3 written quotes and a fixed-scope contract.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi Wassim & K7, I would like a renovation quote. Estimator: '+fmt(total)+' ('+type+', '+area+'m²).')}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Get a real quote</a>
+    </div>`;
+}
+
+/* ============ PURCHASE COSTS ============ */
+function runPurchaseCosts(){
+  const price = parseFloat(document.getElementById('pcPrice').value)||0;
+  const buyer = document.getElementById('pcBuyer').value;
+  const scheme = document.getElementById('pcScheme').value;
+
+  let dutyPct = 5;
+  if(buyer === 'non-citizen' && (scheme === 'pds' || scheme === 'res' || scheme === 'smart')) dutyPct = 10;
+
+  const duty = price * dutyPct/100;
+  const notary = price * 0.0115 + 1000;
+  const stamps = price * 0.003;
+  const edb = (buyer === 'non-citizen' && scheme !== 'standard' && scheme !== 'g2') ? 25000 : 0;
+  const total = duty + notary + stamps + edb;
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+
+  document.getElementById('pcResult').innerHTML = `
+    <div class="result-line"><span>Registration duty (${dutyPct}%)</span><span>${fmt(duty)}</span></div>
+    <div class="result-line"><span>Notary fees (~1.15% + stamps)</span><span>${fmt(notary)}</span></div>
+    <div class="result-line"><span>Stamps & misc (0.3%)</span><span>${fmt(stamps)}</span></div>
+    ${edb>0?`<div class="result-line"><span>EDB / scheme approval (est.)</span><span>${fmt(edb)}</span></div>`:''}
+    <div class="result-total"><span>Total transaction costs</span><span>${fmt(total)}</span></div>
+    <div class="result-line" style="margin-top:12px"><span>Effective % of price</span><span>${(total/price*100).toFixed(2)}%</span></div>
+    <div class="result-note">Indicative only. Actual rates depend on the specific scheme and buyer status. Registration duty for certain 2026 schemes may be 10%. Notary fees are set by law. EDB approval fees vary.</div>
+  `;
+}
+
+/* ============ LAND CONVERTER ============ */
+const landUnits = { perch: 42.21, m2: 1, arpent: 4221, hectare: 10000, toise: 3.8, sqft: 0.0929 };
+
+function runLandConverter(){
+  const val = parseFloat(document.getElementById('landVal').value)||0;
+  const unit = document.getElementById('landUnit').value;
+  const m2 = val * landUnits[unit];
+  const fmt = (n, d=2) => n.toLocaleString('en-US', {maximumFractionDigits:d});
+
+  document.getElementById('landResult').innerHTML = `
+    <div class="result-line"><span>Square metres (m²)</span><span>${fmt(m2, 2)}</span></div>
+    <div class="result-line"><span>Perches</span><span>${fmt(m2/42.21, 3)}</span></div>
+    <div class="result-line"><span>Arpents</span><span>${fmt(m2/4221, 3)}</span></div>
+    <div class="result-line"><span>Hectares</span><span>${fmt(m2/10000, 4)}</span></div>
+    <div class="result-line"><span>Toises</span><span>${fmt(m2/3.8, 2)}</span></div>
+    <div class="result-line"><span>Square feet (ft²)</span><span>${fmt(m2/0.0929, 0)}</span></div>
+    <div class="result-note">Mauritian land units: 1 arpent = 100 perches ≈ 4,221 m². 1 perch ≈ 42.21 m². Verify with your notary — regional variations may exist.</div>
+  `;
+}
+
+/* ============ CURRENCY ============ */
+const fxRates = { MUR: 1, USD: 46, EUR: 50, GBP: 58, ZAR: 2.5, INR: 0.55, AED: 12.5, CHF: 52, CAD: 34, AUD: 30 };
+const fxLabels = {
+  MUR:'Mauritian Rupee (Rs)', USD:'US Dollar ($)', EUR:'Euro (€)', GBP:'British Pound (£)',
+  ZAR:'South African Rand (R)', INR:'Indian Rupee (₹)', AED:'UAE Dirham (AED)',
+  CHF:'Swiss Franc (CHF)', CAD:'Canadian Dollar (CAD)', AUD:'Australian Dollar (AUD)'
+};
+
+function runCurrency(){
+  const amt = parseFloat(document.getElementById('curAmt').value)||0;
+  const from = document.getElementById('curFrom').value;
+  const mur = amt * fxRates[from];
+  const fmt = n => n.toLocaleString('en-US', {maximumFractionDigits:0});
+  const fmt2 = n => n.toLocaleString('en-US', {maximumFractionDigits:2});
+  const order = ['MUR','USD','EUR','GBP','ZAR','INR','AED','CHF','CAD','AUD'];
+
+  let html = '';
+  order.forEach(cur => {
+    if(cur === from) return;
+    const val = mur / fxRates[cur];
+    const display = val >= 1000 ? fmt(val) : fmt2(val);
+    html += `<div class="result-line"><span>${fxLabels[cur]}</span><span>${display}</span></div>`;
+  });
+
+  document.getElementById('curResult').innerHTML = `
+    <div class="result-total" style="border:none;padding:0 0 12px;margin:0"><span>${fmt(amt)} ${from}</span><span>≈ ${fmt(mur)} MUR</span></div>
+    ${html}
+    <div class="result-note">Indicative rates only, for planning purposes. Actual rates from your bank will include spreads and fees. Not financial advice.</div>
   `;
 }
 
@@ -1077,7 +1359,7 @@ function runKYC(){
     </div>`;
 }
 
-/* ============ BUILD ENQUIRY (panel) ============ */
+/* ============ BUILD ENQUIRY ============ */
 function runBuildEnquiry(){
   const name = document.getElementById('bName').value.trim();
   const phone = document.getElementById('bPhone').value.trim();
