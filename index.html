@@ -1,1691 +1,1160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LION FUEL CODE — The Brotherhood of Winners</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --black: #0a0a0a;
-            --dark: #111111;
-            --darker: #070707;
-            --gold: #d4af37;
-            --gold-light: #f0c33c;
-            --gold-glow: rgba(212, 175, 55, 0.3);
-            --red: #c41e3a;
-            --white: #ffffff;
-            --gray: #888888;
-            --gray-dark: #444444;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        body {
-            background-color: var(--black);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 24px;
-            color: var(--black);
-            box-shadow: 0 0 20px var(--gold-glow);
-            overflow: hidden;
-        }
-        
-        .logo-icon img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-        
-        .logo-text {
-            font-size: 28px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px var(--gold-glow);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        nav a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            transition: width 0.3s;
-        }
-        
-        nav a:hover {
-            color: var(--gold);
-        }
-        
-        nav a:hover:after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('images/garen.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            padding: 200px 0 150px;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--black) 70%);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 5.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .hero h1 span {
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px var(--gold-glow);
-        }
-        
-        .hero p {
-            font-size: 1.8rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: var(--gray);
-            font-weight: 500;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            color: var(--black);
-            padding: 20px 50px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: 0.5s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
-        }
-        
-        .cta-button:hover:before {
-            left: 100%;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 80px;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--gold);
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: var(--gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 120px 0;
-            background-color: var(--darker);
-            position: relative;
-        }
-        
-        .about:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 3.5rem;
-            margin-bottom: 80px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .section-title span {
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--white);
-            line-height: 1.2;
-        }
-        
-        .about-text p {
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            color: var(--gray);
-            line-height: 1.8;
-        }
-        
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-        
-        .feature {
-            background: linear-gradient(145deg, rgba(30,30,30,0.8), rgba(10,10,10,0.9));
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature h4 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--gold-light);
-        }
-        
-        .feature p {
-            color: var(--gray);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        /* Why Section */
-        .why {
-            padding: 120px 0;
-            background-color: var(--black);
-            text-align: center;
-            position: relative;
-        }
-        
-        .why:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-        
-        .why-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .why-text {
-            font-size: 1.5rem;
-            line-height: 1.8;
-            color: var(--gray);
-            margin-bottom: 60px;
-            font-weight: 500;
-        }
-        
-        .why-text span {
-            color: var(--gold);
-            font-weight: 700;
-        }
-        
-        .mission-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .mission-feature {
-            background: linear-gradient(145deg, rgba(30,30,30,0.8), rgba(10,10,10,0.9));
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 4px solid var(--gold);
-            text-align: left;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .mission-feature h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--gold-light);
-        }
-        
-        .mission-feature p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-        
-        /* Application Section */
-        .application {
-            padding: 120px 0;
-            background-color: var(--black);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .application:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-        
-        .banner {
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--black);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 50px;
-            font-weight: 900;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: linear-gradient(145deg, rgba(30,30,30,0.9), rgba(10,10,10,0.95));
-            padding: 60px;
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-        }
-        
-        .form-container:before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--gold), var(--gold-light), var(--gold));
-            z-index: -1;
-            border-radius: 17px;
-            opacity: 0.2;
-        }
-        
-        .form-title {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--gold);
-            font-weight: 800;
-        }
-        
-        .form-group {
-            margin-bottom: 30px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--white);
-            font-size: 1.1rem;
-        }
-        
-        .form-group input, 
-        .form-group textarea, 
-        .form-group select {
-            width: 100%;
-            padding: 18px 20px;
-            background-color: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            color: var(--white);
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-group input:focus, 
-        .form-group textarea:focus, 
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 10px var(--gold-glow);
-        }
-        
-        .form-group textarea {
-            height: 140px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            color: var(--black);
-            border: none;
-            padding: 20px 50px;
-            font-size: 1.2rem;
-            font-weight: 900;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-            margin-top: 10px;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
-        }
-
-        /* Backup WhatsApp Instructions */
-        .backup-instructions {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 10px;
-            border-left: 4px solid var(--gold);
-        }
-        
-        .backup-instructions h4 {
-            color: var(--gold);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .backup-instructions p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .message-template {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: var(--white);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .copy-btn {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        
-        .copy-btn:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-        
-        /* Proof Section */
-        .proof {
-            padding: 120px 0;
-            background-color: var(--darker);
-            position: relative;
-        }
-        
-        .proof:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-        
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .proof-item {
-            background: linear-gradient(145deg, rgba(30,30,30,0.8), rgba(10,10,10,0.9));
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        
-        .proof-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-        
-        .proof-img {
-            height: 250px;
-            background-color: #333;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .proof-content {
-            padding: 30px;
-        }
-        
-        .proof-content h4 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--gold);
-        }
-        
-        .proof-content p {
-            color: var(--gray);
-            line-height: 1.7;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--black);
-            padding: 80px 0 30px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            position: relative;
-        }
-        
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), transparent);
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 50px;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--gold);
-            transform: translateY(-3px);
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(to right, #25D366, #1ebe5e);
-            color: white;
-            padding: 16px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
-        }
-        
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
-        }
-        
-        .copyright {
-            text-align: center;
-            color: var(--gray);
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(to right, #25D366, #1ebe5e);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-        
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Responsive */
-        @media (max-width: 1100px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
-            
-            .about-content {
-                gap: 50px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                gap: 15px;
-            }
-            
-            .hero {
-                padding: 150px 0 80px;
-                background-attachment: scroll;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.3rem;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .form-container {
-                padding: 40px 30px;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
-            }
-            
-            .proof-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mission-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .banner {
-                font-size: 1.4rem;
-                padding: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <img src="images/garen5.jpg" alt="Lion Fuel Code Logo">
-                    </div>
-                    <div class="logo-text">LION FUEL CODE</div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#about">The Code</a></li>
-                        <li><a href="#why">Why We Exist</a></li>
-                        <li><a href="#application">Join The Brotherhood</a></li>
-                        <li><a href="#proof">Proof</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>NOT A PROGRAM.<br>A <span>CODE</span>.</h1>
-                <p>Build Discipline. Master Mindset. Become Untouchable.</p>
-                <a href="#application" class="cta-button">JOIN THE BROTHERHOOD →</a>
-                
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Allies In The Code</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">97%</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Brotherhood Support</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">THE <span>CODE</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>What Is LionFuel Code?</h3>
-                    <p>A mindset + discipline training cult for the next generation. We don't talk. We build.</p>
-                    <p>While others poison the youth, we build the future. To build men and women who don't kneel. Men and women who lead.</p>
-                    <p>This isn't a course. It's a brotherhood. A code that transforms boys into kings.</p>
-                </div>
-                <div class="about-features">
-                    <div class="feature">
-                        <h4>What We Offer (Free For Now)</h4>
-                        <p>Weekly strategy sessions (in-person or online)</p>
-                        <p>Full LionFuel Daily Discipline Structure (PDF + videos)</p>
-                        <p>Exclusive access to drops, codes, mindset drills</p>
-                        <p>One weekly in-person meetup (Restaurant HQ)</p>
-                        <p>24/7 Brotherhood chat support</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Section -->
-    <section class="why" id="why">
-        <div class="container">
-            <h2 class="section-title">WHY WE <span>EXIST</span></h2>
-            <div class="why-content">
-                <div class="why-text">
-                    <p>We live in a world where the youth are poisoned. Schools lie. Society softens. We train for truth. Pain. Discipline. We don't ask permission. We rewrite destiny.</p>
-                </div>
-                
-                <h3 class="section-title" style="font-size: 2.5rem; margin-bottom: 40px;">YOUR <span>MISSION</span> (ONCE INSIDE)</h3>
-                
-                <div class="mission-features">
-                    <div class="mission-feature">
-                        <h4>Daily Discipline Ritual</h4>
-                        <p>Wake-up, journaling, movement - no exceptions. The foundation of a lion's day.</p>
-                    </div>
-                    <div class="mission-feature">
-                        <h4>Weekly Check-In</h4>
-                        <p>LionFuel HQ or WhatsApp accountability. We track progress, not excuses.</p>
-                    </div>
-                    <div class="mission-feature">
-                        <h4>Brotherhood Accountability</h4>
-                        <p>Your brothers push you when you falter. No weakness tolerated.</p>
-                    </div>
-                    <div class="mission-feature">
-                        <h4>No Outside Influence</h4>
-                        <p>Cut the noise. Focus on growth. We build in silence, win in public.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Application Section -->
-    <section class="application" id="application">
-        <div class="container">
-            <h2 class="section-title">REQUEST <span>ACCESS</span></h2>
-            
-            <div class="banner">
-                RS3000/Month – Only Real Ones Apply. No sheep allowed.
-            </div>
-            
-            <div class="form-container">
-                <h3 class="form-title">Request Access to LionFuel Code</h3>
-                <form id="application-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Age</label>
-                        <input type="number" id="age" name="age" required placeholder="Enter your age" min="16" max="40">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="Enter your WhatsApp number">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City/Village</label>
-                        <input type="text" id="city" name="city" required placeholder="Where are you located?">
-                    </div>
-                    <div class="form-group">
-                        <label for="reason">Why do you want to join LionFuel Code?</label>
-                        <textarea id="reason" name="reason" required placeholder="Tell us why you deserve to be part of the brotherhood..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
-                </form>
-
-                <!-- Backup WhatsApp Instructions -->
-                <div class="backup-instructions">
-                    <h4>Having issues sending?</h4>
-                    <p>If the form doesn't work, manually message us on WhatsApp:</p>
-                    <div class="message-template">
-                        <div><strong>Number:</strong> +230 52595505</div>
-                        <div><strong>Message Format:</strong></div>
-                        <div>LION FUEL CODE APPLICATION</div>
-                        <div>Name: [Your Full Name]</div>
-                        <div>Age: [Your Age]</div>
-                        <div>Phone: [Your Number]</div>
-                        <div>Location: [Your City]</div>
-                        <div>Why I want to join: [Your Reason]</div>
-                    </div>
-                    <button id="copyTemplate" class="copy-btn">Copy Message Template</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Proof Section -->
-    <section class="proof" id="proof">
-        <div class="container">
-            <h2 class="section-title">PROOF OF <span>IMPACT</span></h2>
-            <div class="proof-grid">
-                <div class="proof-item">
-                    <div class="proof-img" style="background-image: url('images/garen1.jpg')"></div>
-                    <div class="proof-content">
-                        <h4>Training Sessions</h4>
-                        <p>Real mentorship in action. Building the next generation of leaders through intensive training and discipline.</p>
-                    </div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-img" style="background-image: url('images/garen3.jpg')"></div>
-                    <div class="proof-content">
-                        <h4>Lion HQ</h4>
-                        <p>Our strategic headquarters where minds are forged and plans are made. The epicenter of the brotherhood.</p>
-                    </div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-img" style="background-image: url('images/garen4.jpg')"></div>
-                    <div class="proof-content">
-                        <h4>The Brotherhood</h4>
-                        <p>A community of driven individuals pushing each other to excel beyond limits. Winners building winners.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">LION FUEL CODE</div>
-                <div class="social-links">
-                    <a href="https://www.tiktok.com/@gtv.by.g.chetty" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.tiktok.com/@lionfuel" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=23052595505&text=Hello%20LionFuel%20Code%2C%20I%20want%20to%20join%20the%20brotherhood" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Message the LionFuel Team
-                    </a>
-                </div>
-            </div>
-           
-        </div>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=23052595505&text=Hello%20LionFuel%20Code%2C%20I%20want%20to%20join%20the%20brotherhood" class="floating-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script>
-        // Form submission handler with WhatsApp integration
-        document.getElementById('application-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const age = formData.get('age');
-            const phone = formData.get('phone');
-            const city = formData.get('city');
-            const reason = formData.get('reason');
-            
-            // Create WhatsApp message with proper encoding
-            const message = `LION FUEL CODE APPLICATION%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Age:* ${encodeURIComponent(age)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Location:* ${encodeURIComponent(city)}%0A*Why I want to join:* ${encodeURIComponent(reason)}`;
-            
-            // Create WhatsApp link with multiple format options
-            const whatsappLinks = [
-                `https://api.whatsapp.com/send?phone=23052595505&text=${message}`,
-                `https://wa.me/23059237053?text=${message}`,
-                `https://web.whatsapp.com/send?phone=23052595505&text=${message}`
-            ];
-            
-            // Try the first link, if it fails, students can manually copy the message
-            window.open(whatsappLinks[0], '_blank');
-            
-            // Show confirmation message with backup instructions
-            alert(`Thank you ${name}. Your application has been submitted.\n\nIf WhatsApp doesn't open automatically:\n1. Open WhatsApp manually\n2. Send this message to +23052595505:\n\n"LION FUEL CODE APPLICATION\n\nName: ${name}\nAge: ${age}\nPhone: ${phone}\nLocation: ${city}\nWhy I want to join: ${reason}"`);
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Copy template functionality
-        document.getElementById('copyTemplate').addEventListener('click', function() {
-            const template = `LION FUEL CODE APPLICATION
-
-Name: 
-Age: 
-Phone: 
-Location: 
-Why I want to join: `;
-            
-            navigator.clipboard.writeText(template).then(function() {
-                const originalText = this.textContent;
-                this.textContent = 'Copied!';
-                this.style.background = 'var(--gold)';
-                this.style.color = 'var(--black)';
-                
-                setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.background = 'transparent';
-                    this.style.color = 'var(--gold)';
-                }, 2000);
-            }.bind(this));
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            }
-        });
-    </script>
-</body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LionFuel Code – Secure Payment</title>
-
+<title>Wassim & K7 Property Services | Real Estate Mauritius — Consultancy, Build, Renovation, Estimation</title>
+<meta name="description" content="Wassim & K7 Property Services — Mauritius real estate consultancy, property valuation, renovation, construction advisory, and rentals. Interactive estimator, financing calculator, KYC, and build enquiry tools. Behind Oasis 2, Pereybere.">
+<meta name="keywords" content="real estate Mauritius, property valuation Mauritius, property consultancy Mauritius, build house Mauritius, renovation Mauritius, buy property Mauritius, rent villa Mauritius, best place to live Mauritius, Mauritius real estate 2026">
+<meta name="author" content="Wassim & K7 Property Services">
+<meta property="og:title" content="Wassim & K7 Property Services | Real Estate Mauritius">
+<meta property="og:description" content="Mauritius property consultancy and construction advisory. Free property estimator, financing calculator, KYC, build enquiry.">
+<meta property="og:type" content="website">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Roboto, Arial, sans-serif;
-        background: #f1f5f9;
-    }
+:root{
+  --bg:#0b0b0d;
+  --surface:#15151a;
+  --surface-2:#1d1d24;
+  --surface-3:#25252e;
+  --border:#2a2a33;
+  --border-2:#383843;
+  --text:#e8e8ed;
+  --text-muted:#93939e;
+  --text-dim:#66666f;
+  --accent:#c9a227;
+  --accent-hover:#dab536;
+  --accent-fg:#0a0a0c;
+  --accent-soft:rgba(201,162,39,0.08);
+  --accent-soft-2:rgba(201,162,39,0.15);
+  --success:#107c10;
+  --error:#d13438;
+  --radius:8px;
+  --radius-lg:12px;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.25);
+  --shadow-md:0 2px 8px rgba(0,0,0,0.3);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Segoe UI','Segoe UI Variable',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4,h5,h6{font-weight:600;line-height:1.25;letter-spacing:-0.01em;margin:0}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-hover)}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-    footer {
-        background: linear-gradient(135deg, #020617, #0f172a);
-        color: #ffffff;
-        padding: 35px 20px;
-        box-shadow: 0 -8px 25px rgba(0,0,0,0.3);
-    }
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(11,11,13,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--text);letter-spacing:0.02em}
+.nav-brand i{color:var(--accent);font-size:18px}
+.nav-brand small{display:block;font-size:10px;font-weight:400;color:var(--text-muted);letter-spacing:0.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:13.5px;font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 18px;font-size:13.5px;font-weight:600;border-radius:var(--radius);
+  border:1px solid transparent;cursor:pointer;transition:all .15s ease;
+  font-family:inherit;letter-spacing:0.01em;
+}
+.btn-primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--accent-fg)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--border-2)}
+.btn-outline:hover{background:var(--surface-2);border-color:var(--accent);color:var(--text)}
+.btn-ghost{background:transparent;color:var(--text-muted);border:none;padding:8px 12px}
+.btn-ghost:hover{color:var(--text);background:var(--surface-2)}
+.btn-sm{padding:6px 12px;font-size:12.5px}
+.btn-lg{padding:12px 24px;font-size:14.5px}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:20px;cursor:pointer}
+@media(max-width:900px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;gap:14px;align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .nav-cta .btn span{display:none}
+  .nav-cta .btn{padding:9px 12px}
+}
 
-    .container {
-        max-width: 900px;
-        margin: auto;
-        text-align: center;
-    }
+/* HERO */
+.hero{padding:88px 0 72px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,162,39,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);color:var(--accent);font-size:11.5px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-radius:100px;margin-bottom:22px}
+.hero-tag i{font-size:10px}
+.hero h1{font-size:44px;font-weight:700;letter-spacing:-0.02em;max-width:820px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{font-size:16.5px;color:var(--text-muted);max-width:680px;margin:22px 0 30px;line-height:1.65}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted)}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.hero-meta i{color:var(--accent);font-size:13px}
+@media(max-width:768px){.hero{padding:56px 0 48px}.hero h1{font-size:30px}.hero p.lead{font-size:15px}}
 
-    h2 {
-        margin-bottom: 10px;
-        font-size: 24px;
-        letter-spacing: 0.5px;
-    }
+/* TRUST STRIP */
+.trust{border-bottom:1px solid var(--border);background:var(--surface)}
+.trust-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1200px;margin:0 auto;padding:0 24px}
+.trust-item{padding:22px 20px;border-right:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.trust-item:last-child{border-right:none}
+.trust-item i{color:var(--accent);font-size:18px;flex-shrink:0}
+.trust-item strong{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:1px}
+.trust-item small{display:block;font-size:11.5px;color:var(--text-muted)}
+@media(max-width:768px){.trust-inner{grid-template-columns:repeat(2,1fr)}.trust-item{border-bottom:1px solid var(--border)}.trust-item:nth-child(2){border-right:none}.trust-item:nth-child(3),.trust-item:nth-child(4){border-bottom:none}.trust-item:nth-child(4){border-right:none}}
 
-    .price {
-        font-size: 22px;
-        font-weight: bold;
-        color: #22c55e;
-        margin-bottom: 20px;
-    }
+/* SECTION */
+section{padding:72px 0}
+section.alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sec-head{max-width:680px;margin:0 auto 48px;text-align:center}
+.sec-eyebrow{font-size:11.5px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-head h2{font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+.sec-head p{color:var(--text-muted);font-size:15px;line-height:1.6}
+@media(max-width:768px){section{padding:52px 0}.sec-head h2{font-size:23px}}
 
-    .card {
-        background: rgba(255,255,255,0.05);
-        border-radius: 16px;
-        padding: 25px;
-        margin: 20px 0;
-        backdrop-filter: blur(10px);
-    }
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;transition:border-color .15s,background .15s}
+.svc:hover{border-color:var(--border-2);background:var(--surface-3)}
+.svc-icon{width:42px;height:42px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid var(--accent-soft-2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc-icon i{color:var(--accent);font-size:16px}
+.svc h3{font-size:15.5px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.svc p{font-size:13.5px;color:var(--text-muted);margin:0;line-height:1.6}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
 
-    .label {
-        font-size: 13px;
-        text-transform: uppercase;
-        color: #94a3b8;
-        letter-spacing: 1px;
-    }
+/* TOOLS */
+.tools-shell{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.tools-tabs{display:flex;flex-wrap:wrap;gap:0;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto}
+.tools-tab{flex:0 0 auto;padding:14px 20px;background:transparent;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;letter-spacing:0.01em;display:flex;align-items:center;gap:8px;white-space:nowrap;transition:color .15s,border-color .15s}
+.tools-tab:hover{color:var(--text)}
+.tools-tab.active{color:var(--accent);border-bottom-color:var(--accent);background:var(--surface-2)}
+.tools-tab i{font-size:12px}
+.tools-body{padding:32px}
+.tool-panel{display:none}
+.tool-panel.active{display:block;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.tool-grid.single{grid-template-columns:1fr;max-width:720px;margin:0 auto}
+@media(max-width:800px){.tool-grid{grid-template-columns:1fr}}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12.5px;font-weight:600;color:var(--text-muted);margin-bottom:6px;letter-spacing:0.02em;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+  color:var(--text);font-size:14px;font-family:inherit;transition:border-color .15s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.form-group textarea{resize:vertical;min-height:70px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.result-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;min-height:100px}
+.result-empty{color:var(--text-dim);font-size:13.5px;text-align:center;padding:32px 16px;font-style:italic}
+.result-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px}
+.result-line:last-child{border-bottom:none}
+.result-line span:first-child{color:var(--text-muted)}
+.result-line span:last-child{color:var(--text);font-weight:600}
+.result-total{display:flex;justify-content:space-between;padding:14px 0 0;margin-top:6px;border-top:1px solid var(--border-2);font-size:16px}
+.result-total span:first-child{color:var(--text);font-weight:600}
+.result-total span:last-child{color:var(--accent);font-weight:700}
+.result-note{margin-top:16px;padding:12px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);border-radius:var(--radius);font-size:12.5px;color:var(--text-muted);line-height:1.55}
+.result-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 
-    .account-box {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
+/* INTELLIGENCE */
+.intel-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.intel-card{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px}
+.intel-card h3{font-size:16px;font-weight:600;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.intel-card h3 i{font-size:14px}
+.intel-card p,.intel-card li{font-size:13.5px;color:var(--text-muted);line-height:1.65}
+.intel-card ul{padding-left:18px;margin:10px 0 0}
+.intel-card li{margin-bottom:6px}
+.intel-card strong{color:var(--text)}
+@media(max-width:800px){.intel-grid{grid-template-columns:1fr}}
 
-    .account-number {
-        background: #020617;
-        border: 1px solid #334155;
-        border-radius: 10px;
-        padding: 12px 16px;
-        font-size: 16px;
-        color: #e5e7eb;
-        user-select: all;
-    }
+/* REGIONS */
+.regions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.region{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px}
+.region h4{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.region h4 small{font-size:10.5px;color:var(--accent);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--accent-soft);padding:2px 8px;border-radius:100px}
+.region p{font-size:12.5px;color:var(--text-muted);margin:0;line-height:1.55}
+@media(max-width:900px){.regions-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.regions-grid{grid-template-columns:1fr}}
 
-    button {
-        background: #22c55e;
-        color: #022c22;
-        border: none;
-        border-radius: 10px;
-        padding: 12px 18px;
-        font-size: 14px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s ease;
-    }
+/* PROPERTIES */
+.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prop{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .15s;position:relative;display:flex;flex-direction:column}
+.prop:hover{border-color:var(--border-2)}
+.prop-img{aspect-ratio:16/10;background:var(--surface-3) center/cover no-repeat;position:relative}
+.prop-badge{position:absolute;top:12px;left:12px;padding:4px 10px;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);border:1px solid var(--border-2);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border-radius:100px}
+.prop-heart{position:absolute;top:12px;right:12px;width:32px;height:32px;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);border:1px solid var(--border-2);color:var(--text);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;font-size:13px}
+.prop-heart:hover{color:var(--accent);border-color:var(--accent)}
+.prop-heart.active{color:var(--accent);border-color:var(--accent);background:rgba(201,162,39,0.15)}
+.prop-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.prop-loc{font-size:11.5px;color:var(--text-muted);letter-spacing:0.03em;text-transform:uppercase;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.prop-loc i{color:var(--accent);font-size:10px}
+.prop-title{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.35}
+.prop-price{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:12px}
+.prop-feat{font-size:12.5px;color:var(--text-muted);line-height:1.55;margin-bottom:16px;flex:1}
+.prop-actions{display:flex;gap:6px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border)}
+.prop-actions a,.prop-actions button{flex:1;min-width:0;padding:7px 10px;font-size:11.5px;font-weight:600;text-align:center;border-radius:var(--radius);border:1px solid var(--border-2);background:transparent;color:var(--text-muted);cursor:pointer;font-family:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .15s}
+.prop-actions a:hover,.prop-actions button:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.prop-actions a i,.prop-actions button i{font-size:11px}
+.props-footer{text-align:center;margin-top:36px;padding-top:32px;border-top:1px solid var(--border)}
+@media(max-width:900px){.props-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.props-grid{grid-template-columns:1fr}}
 
-    button:hover {
-        background: #16a34a;
-    }
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
+.team-card{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;text-align:center}
+.team-avatar{width:90px;height:90px;border-radius:50%;background:var(--surface-3);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:28px;font-weight:700;color:var(--accent);overflow:hidden}
+.team-avatar img{width:100%;height:100%;object-fit:cover}
+.team-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px}
+.team-card .role{font-size:12.5px;color:var(--accent);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:16px}
+.team-card p{font-size:13.5px;color:var(--text-muted);line-height:1.65;text-align:left;margin-bottom:14px}
+.team-skills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px}
+.skill{font-size:11px;padding:4px 10px;background:var(--accent-soft);border:1px solid var(--accent-soft-2);color:var(--accent);border-radius:100px;font-weight:600}
+@media(max-width:700px){.team-grid{grid-template-columns:1fr}}
 
-    .info {
-        font-size: 14px;
-        line-height: 1.7;
-        color: #e5e7eb;
-        margin-top: 15px;
-    }
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.contact-info{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px}
+.contact-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border)}
+.contact-item:last-child{border-bottom:none}
+.contact-item i{color:var(--accent);font-size:16px;margin-top:2px;flex-shrink:0;width:20px}
+.contact-item .label{font-size:11.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:4px}
+.contact-item .value{font-size:14px;color:var(--text);font-weight:500}
+.contact-item .value a{color:var(--text)}
+.contact-item .value a:hover{color:var(--accent)}
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr}}
 
-    .whatsapp {
-        margin-top: 20px;
-    }
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-col h4{font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.footer-col p,.footer-col a{font-size:13px;color:var(--text-muted);line-height:1.7;display:block;margin-bottom:6px}
+.footer-col a:hover{color:var(--accent)}
+.footer-social{display:flex;gap:10px;margin-top:16px}
+.footer-social a{width:34px;height:34px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:13px}
+.footer-social a:hover{color:var(--accent);border-color:var(--accent)}
+.footer-bottom{padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--text-dim)}
+.footer-seo{font-size:11px;color:var(--text-dim);line-height:1.7;margin-top:16px;padding-top:20px;border-top:1px solid var(--border)}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
 
-    .whatsapp a {
-        display: inline-block;
-        background: #25D366;
-        color: #ffffff;
-        padding: 14px 22px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        transition: transform 0.2s ease;
-    }
+/* FLOATING WHATSAPP */
+.wa-float{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:999;text-decoration:none;transition:transform .15s}
+.wa-float:hover{color:#fff;transform:scale(1.06)}
 
-    .whatsapp a:hover {
-        transform: translateY(-2px);
-    }
+/* TOAST */
+.toast{position:fixed;bottom:88px;right:24px;background:var(--surface-3);border:1px solid var(--accent);color:var(--text);padding:12px 18px;border-radius:var(--radius);font-size:13px;z-index:1000;opacity:0;pointer-events:none;transition:opacity .2s;max-width:320px;box-shadow:var(--shadow-md)}
+.toast.show{opacity:1}
 
-    .brand {
-        margin-top: 30px;
-        font-size: 13px;
-        color: #94a3b8;
-        letter-spacing: 0.4px;
-    }
-
-    @media (max-width: 600px) {
-        h2 { font-size: 20px; }
-        .price { font-size: 20px; }
-    }
+/* PRINT */
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  .nav,.wa-float,.hero-actions,.tools-tabs,footer,.toast,.prop-actions,.props-footer,.nav-cta,button,.btn{display:none!important}
+  .hero,.hero::before{background:#fff!important;padding:20px 0;border:none}
+  .hero h1,.hero h1 span{color:#000!important}
+  .hero p.lead{color:#333!important}
+  section{padding:16px 0;page-break-inside:avoid}
+  .tools-shell{border:1px solid #ccc;background:#fff}
+  .tools-body{padding:16px}
+  .tool-panel{display:block!important;page-break-after:always}
+  .result-box,.intel-card,.svc,.region,.prop,.team-card,.contact-info{background:#fff!important;border:1px solid #ccc!important;color:#000!important}
+  .result-box *,.intel-card *,.svc *,.region *,.prop *,.team-card *,.contact-info *{color:#000!important}
+  .result-total span:last-child{color:#000!important}
+  .prop-img{background:#eee!important}
+  .footer-seo,.footer-grid{display:none!important}
+  a{color:#000!important;text-decoration:none!important}
+}
 </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <i class="fas fa-landmark"></i>
+      <div>Wassim & K7 Property Services<small>Real Estate Mauritius</small></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#tools">Tools</a>
+      <a href="#intelligence">Market</a>
+      <a href="#properties">Properties</a>
+      <a href="#team">Team</a>
+      <a href="#build">Build With Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#build" class="btn btn-outline"><i class="fas fa-hammer"></i> <span>Build Enquiry</span></a>
+      <a href="https://wa.me/23057012560" target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> <span>WhatsApp</span></a>
+      <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-tag"><i class="fas fa-map-marker-alt"></i> Behind Oasis 2 · Pereybere · Mauritius</div>
+    <h1>Real estate in Mauritius, done <span>properly</span> — from consultancy to construction.</h1>
+    <p class="lead">
+      Wassim & K7 Property Services is a Mauritius-based consultancy covering property search,
+      valuation, renovation, and build advisory. We combine on-the-ground market knowledge with
+      transparent, professional guidance — whether you're buying your first home, investing in
+      rental income, or building from the ground up.
+    </p>
+    <div class="hero-actions">
+      <a href="#tools" class="btn btn-primary btn-lg"><i class="fas fa-calculator"></i> Free Property Estimator</a>
+      <a href="#properties" class="btn btn-outline btn-lg"><i class="fas fa-home"></i> Browse Properties</a>
+      <a href="https://wa.me/23057012560" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> +230 5701 2560</a>
+    </div>
+    <div class="hero-meta">
+      <span><i class="fas fa-map-marker-alt"></i> Behind Oasis 2, Pereybere</span>
+      <span><i class="fas fa-phone"></i> +230 5701 2560 · +230 5923 7053</span>
+      <span><i class="fas fa-envelope"></i> bookings@superdealsmauritius.com</span>
+      <span><i class="fas fa-language"></i> Français · English</span>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><i class="fas fa-shield-halved"></i><div><strong>Consultancy-led</strong><small>Advice before you commit</small></div></div>
+    <div class="trust-item"><i class="fas fa-hammer"></i><div><strong>Build & Renovation</strong><small>From plot to finished home</small></div></div>
+    <div class="trust-item"><i class="fas fa-chart-line"></i><div><strong>Investment Focus</strong><small>Yield-first property selection</small></div></div>
+    <div class="trust-item"><i class="fas fa-globe"></i><div><strong>Island-Wide Coverage</strong><small>North · West · East · South · Centre</small></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">What We Do</div>
+      <h2>Full-service property, end to end</h2>
+      <p>Everything you need to buy, sell, rent, value, renovate, or build a property in Mauritius.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc"><div class="svc-icon"><i class="fas fa-comments-dollar"></i></div><h3>Property Consultancy</h3><p>Independent advice on which property, which region, and which strategy best matches your goals and budget.</p></div>
+      <div class="svc"><div class="svc-icon"><i class="fas fa-calculator"></i></div><h3>Property Valuation</h3><p>Market-based estimates for sale, rental, refinancing, or investment planning — with transparent reasoning.</p></div>
+      <div class="svc"><div class="svc-icon"><i class="fas fa-magnifying-glass-location"></i></div><h3>Property Search</h3><p>We shortlist and pre-screen matches — saving you time, and protecting you from overpriced or non-compliant listings.</p></div>
+      <div class="svc"><div class="svc-icon"><i class="fas fa-trowel-bricks"></i></div><h3>Renovation Advisory</h3><p>Planning, budgeting, and supervision of renovation projects — with local contractors and honest cost control.</p></div>
+      <div class="svc"><div class="svc-icon"><i class="fas fa-hammer"></i></div><h3>Build With Us</h3><p>Full advisory on plot selection, design, cost estimation, and construction — you own the land, we help you build it right.</p></div>
+      <div class="svc"><div class="svc-icon"><i class="fas fa-handshake-angle"></i></div><h3>Rental Management</h3><p>Guest reception, cleaning, bookings, maintenance, and owner reporting — for both short and long-term rentals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Interactive Tools</div>
+      <h2>Software built for Mauritius property</h2>
+      <p>Free, instant tools to help you estimate, plan, and pre-qualify — no signup required.</p>
+    </div>
+    <div class="tools-shell">
+      <div class="tools-tabs" id="toolTabs">
+        <button class="tools-tab active" data-tool="estimator"><i class="fas fa-calculator"></i> Property Estimator</button>
+        <button class="tools-tab" data-tool="financing"><i class="fas fa-money-bill-trend-up"></i> Financing</button>
+        <button class="tools-tab" data-tool="roi"><i class="fas fa-chart-pie"></i> Rental ROI</button>
+        <button class="tools-tab" data-tool="kyc"><i class="fas fa-id-card"></i> KYC Pre-Qualification</button>
+        <button class="tools-tab" data-tool="buildForm"><i class="fas fa-hammer"></i> Build Enquiry</button>
+        <button class="tools-tab" data-tool="wishlist"><i class="fas fa-heart"></i> My Wishlist</button>
+      </div>
+      <div class="tools-body">
+
+        <!-- ESTIMATOR -->
+        <div class="tool-panel active" id="panel-estimator">
+          <div class="tool-grid">
+            <div>
+              <div class="form-group"><label>Location</label>
+                <select id="estLocation">
+                  <option value="grand-baie">Grand Baie (prime north)</option>
+                  <option value="pereybere">Pereybere</option>
+                  <option value="pointe-aux-canonniers">Pointe aux Canonniers</option>
+                  <option value="trou-aux-biches">Trou aux Biches</option>
+                  <option value="calodyne">Calodyne</option>
+                  <option value="bain-boeuf">Bain Boeuf</option>
+                  <option value="tamarin">Tamarin / Black River</option>
+                  <option value="flic-en-flac">Flic en Flac</option>
+                  <option value="albion">Albion</option>
+                  <option value="moka">Moka / Quartier Militaire</option>
+                  <option value="quatre-bornes">Quatre Bornes / Rose Hill</option>
+                  <option value="belle-mare">Belle Mare</option>
+                  <option value="flacq">Flacq</option>
+                  <option value="riambel">Riambel / South</option>
+                  <option value="port-louis">Port Louis</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Land (perches)</label><input type="number" id="estLand" value="20" min="1" step="0.5"></div>
+                <div class="form-group"><label>Built area (m²)</label><input type="number" id="estBuilt" value="180" min="0" step="5"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Build quality</label>
+                  <select id="estQuality">
+                    <option value="standard">Standard</option>
+                    <option value="good" selected>Good</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="premium">Premium / branded</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Condition</label>
+                  <select id="estCondition">
+                    <option value="new">New / never lived</option>
+                    <option value="excellent">Excellent</option>
+                    <option value="good" selected>Good</option>
+                    <option value="fair">Fair / dated</option>
+                    <option value="renovation">Needs full renovation</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group"><label>Property age (years)</label><input type="number" id="estAge" value="5" min="0" step="1"></div>
+              <button class="btn btn-primary" onclick="runEstimator()"><i class="fas fa-bolt"></i> Calculate estimate</button>
+            </div>
+            <div>
+              <div class="result-box" id="estResult">
+                <div class="result-empty">Enter property details to see an estimated value.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINANCING -->
+        <div class="tool-panel" id="panel-financing">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Property price (Rs)</label><input type="number" id="finPrice" value="8000000" step="100000"></div>
+                <div class="form-group"><label>Down payment (%)</label><input type="number" id="finDown" value="20" min="0" max="100"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Interest rate (% p.a.)</label><input type="number" id="finRate" value="6.5" step="0.1" min="0"></div>
+                <div class="form-group"><label>Term (years)</label><input type="number" id="finTerm" value="20" min="1" max="40"></div>
+              </div>
+              <button class="btn btn-primary" onclick="runFinancing()"><i class="fas fa-bolt"></i> Calculate monthly payment</button>
+            </div>
+            <div><div class="result-box" id="finResult"><div class="result-empty">Enter financing details to see monthly repayment and total cost.</div></div></div>
+          </div>
+        </div>
+
+        <!-- ROI -->
+        <div class="tool-panel" id="panel-roi">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Purchase price (Rs)</label><input type="number" id="roiPrice" value="8000000" step="100000"></div>
+                <div class="form-group"><label>Monthly rent (Rs)</label><input type="number" id="roiRent" value="35000" step="1000"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Occupancy (%)</label><input type="number" id="roiOcc" value="90" min="0" max="100"></div>
+                <div class="form-group"><label>Annual expenses (%)</label><input type="number" id="roiExp" value="20" min="0" max="100"></div>
+              </div>
+              <button class="btn btn-primary" onclick="runROI()"><i class="fas fa-bolt"></i> Calculate ROI</button>
+            </div>
+            <div><div class="result-box" id="roiResult"><div class="result-empty">Enter rental details to see gross yield, net yield, and annual net income.</div></div></div>
+          </div>
+        </div>
+
+        <!-- KYC -->
+        <div class="tool-panel" id="panel-kyc">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Full name</label><input type="text" id="kycName" placeholder="Your full name"></div>
+                <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" id="kycPhone" placeholder="+230 ..."></div>
+              </div>
+              <div class="form-group"><label>Email</label><input type="email" id="kycEmail" placeholder="you@email.com"></div>
+              <div class="form-row">
+                <div class="form-group"><label>Nationality</label><input type="text" id="kycNat" placeholder="Mauritian, French, etc."></div>
+                <div class="form-group"><label>Residency</label>
+                  <select id="kycRes"><option>Mauritian resident</option><option>Expatriate resident</option><option>Non-resident</option></select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Purpose</label>
+                  <select id="kycPurpose"><option>Buy</option><option>Rent</option><option>Invest</option><option>Build</option><option>Renovate</option></select>
+                </div>
+                <div class="form-group"><label>Budget (Rs)</label><input type="number" id="kycBudget" placeholder="e.g. 8000000" step="100000"></div>
+              </div>
+              <div class="form-group"><label>Timeline</label>
+                <select id="kycTime"><option>Immediate (under 1 month)</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Exploratory</option></select>
+              </div>
+              <button class="btn btn-primary" onclick="runKYC()"><i class="fas fa-id-card"></i> Generate KYC summary</button>
+            </div>
+            <div><div class="result-box" id="kycResult"><div class="result-empty">Complete the form to generate a client pre-qualification summary you can send by WhatsApp or email.</div></div></div>
+          </div>
+        </div>
+
+        <!-- BUILD ENQUIRY -->
+        <div class="tool-panel" id="panel-buildForm">
+          <div class="tool-grid">
+            <div>
+              <div class="form-row">
+                <div class="form-group"><label>Full name</label><input type="text" id="bName" placeholder="Your name"></div>
+                <div class="form-group"><label>Phone</label><input type="tel" id="bPhone" placeholder="+230 ..."></div>
+              </div>
+              <div class="form-group"><label>Email</label><input type="email" id="bEmail" placeholder="you@email.com"></div>
+              <div class="form-row">
+                <div class="form-group"><label>Project type</label>
+                  <select id="bType"><option>New build</option><option>Renovation</option><option>Extension / addition</option><option>Full redesign</option></select>
+                </div>
+                <div class="form-group"><label>Land size (perches)</label><input type="number" id="bLand" placeholder="e.g. 20" step="0.5"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label>Budget (Rs)</label><input type="number" id="bBudget" placeholder="e.g. 5000000" step="100000"></div>
+                <div class="form-group"><label>Timeline</label>
+                  <select id="bTime"><option>ASAP</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option></select>
+                </div>
+              </div>
+              <div class="form-group"><label>Project description</label><textarea id="bDesc" placeholder="Brief description of what you want to build or renovate"></textarea></div>
+              <button class="btn btn-primary" onclick="runBuildEnquiry()"><i class="fas fa-paper-plane"></i> Generate enquiry & send</button>
+            </div>
+            <div><div class="result-box" id="buildResult"><div class="result-empty">Fill the form and choose to send it via WhatsApp or email — directly to our team.</div></div></div>
+          </div>
+        </div>
+
+        <!-- WISHLIST -->
+        <div class="tool-panel" id="panel-wishlist">
+          <div class="tool-grid single">
+            <div>
+              <div class="result-box" id="wishlistResult">
+                <div class="result-empty">Your wishlist is empty. Tap the heart icon on any property to save it here.</div>
+              </div>
+              <div class="result-actions">
+                <button class="btn btn-outline" onclick="clearWishlist()"><i class="fas fa-trash"></i> Clear wishlist</button>
+                <a href="#properties" class="btn btn-outline"><i class="fas fa-home"></i> Browse properties</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTELLIGENCE -->
+<section id="intelligence">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Market Intelligence</div>
+      <h2>What you need to know before you buy or build</h2>
+      <p>Concise guidance from our team on the practical realities of Mauritian real estate in 2026.</p>
+    </div>
+    <div class="intel-grid">
+      <div class="intel-card">
+        <h3><i class="fas fa-user-check"></i> Buying as a foreigner</h3>
+        <p>Foreigners can legally own property in Mauritius, but not on the open market. Approved routes:</p>
+        <ul>
+          <li><strong>PDS / Smart City / IRS / RES</strong> — branded residences and integrated developments.</li>
+          <li><strong>G+2 apartments</strong> — minimum Rs 6M, buyer must be non-citizen for at least 5 years.</li>
+          <li><strong>Resale of existing foreign-owned units</strong> under an approved scheme.</li>
+        </ul>
+        <p style="margin-top:12px">Purchases of <strong>USD 375,000+</strong> under an approved scheme can grant a residence permit for the buyer, spouse, dependent children, and parents.</p>
+      </div>
+      <div class="intel-card">
+        <h3><i class="fas fa-file-signature"></i> The buying process</h3>
+        <p>A standard transaction involves five clear stages:</p>
+        <ul>
+          <li><strong>1. Offer & agreement</strong> — negotiate price and conditions.</li>
+          <li><strong>2. Promise of sale</strong> — binding pre-contract, deposit paid.</li>
+          <li><strong>3. Scheme approval</strong> (foreigners) — EDB application if applicable.</li>
+          <li><strong>4. Notarial deed</strong> — prepared by a Notary Public.</li>
+          <li><strong>5. Registration & duty</strong> — 5% registration duty (10% for some schemes in 2026).</li>
+        </ul>
+      </div>
+      <div class="intel-card">
+        <h3><i class="fas fa-coins"></i> Taxes & ownership costs</h3>
+        <ul>
+          <li><strong>No capital gains tax</strong> on property resale.</li>
+          <li><strong>No inheritance tax</strong> for non-residents.</li>
+          <li><strong>15% flat income tax</strong>, with double-tax treaties (FR, UK, ZA, IN, etc.).</li>
+          <li><strong>Registration duty</strong> — 5% (10% for certain 2026 scheme purchases).</li>
+          <li><strong>Annual land tax</strong> — modest, based on land value.</li>
+          <li><strong>Syndic / maintenance</strong> — varies by residence, typically Rs 1,000–5,000/month.</li>
+        </ul>
+      </div>
+      <div class="intel-card">
+        <h3><i class="fas fa-hammer"></i> Building in Mauritius</h3>
+        <p>If you own land, you can build — but the process matters:</p>
+        <ul>
+          <li><strong>Building permit</strong> required from the local district council.</li>
+          <li><strong>Land use</strong> — confirm residential zoning before purchase.</li>
+          <li><strong>Construction cost</strong> — typically Rs 25,000–50,000 per m² (standard to luxury).</li>
+          <li><strong>Timeline</strong> — 8–14 months for a typical 3-bedroom home.</li>
+          <li><strong>Contractor selection</strong> — always verify references and past projects.</li>
+        </ul>
+        <p style="margin-top:12px">This is where our <a href="#build">Build With Us</a> service saves the most time and money.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Best Places to Live & Invest</div>
+      <h2>Where to buy in Mauritius</h2>
+      <p>Every region has a different character, price point, and rental demand. Here's how we break it down.</p>
+    </div>
+    <div class="regions-grid">
+      <div class="region"><h4>Grand Baie <small>North</small></h4><p>The island's most active lifestyle hub. Beaches, restaurants, nightlife, international schools. Premium prices but strong rental demand and resale value.</p></div>
+      <div class="region"><h4>Pereybere <small>North</small></h4><p>Quieter than Grand Baie, still walking distance to the beach. A favourite for expats and holiday-home owners — strong short-term rental market.</p></div>
+      <div class="region"><h4>Tamarin / Black River <small>West</small></h4><p>Luxury villas, gated estates, and a relaxed surf-town vibe. Popular with long-stay expats and high-end investors.</p></div>
+      <div class="region"><h4>Flic en Flac <small>West</small></h4><p>Long public beach, beachfront apartments, and a mixed residential character. Good value for short-term rentals.</p></div>
+      <div class="region"><h4>Moka / Central <small>Centre</small></h4><p>The most affordable region. Moka Smart City is attracting young professionals and modern residential projects.</p></div>
+      <div class="region"><h4>Belle Mare / East <small>East</small></h4><p>Home to luxury resorts and branded residences. Ultra-prime pricing, exceptional lifestyle, strong capital appreciation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES -->
+<section id="properties">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Featured Listings</div>
+      <h2>5 hand-picked properties</h2>
+      <p>A small selection from our current portfolio. For our full catalogue, visit our Facebook page.</p>
+    </div>
+    <div class="props-grid" id="propsGrid"></div>
+    <div class="props-footer">
+      <p style="color:var(--text-muted);font-size:14px;margin-bottom:16px">Looking for more? Our full catalogue is updated daily on Facebook.</p>
+      <a href="https://www.facebook.com/superdealsmauritius" target="_blank" class="btn btn-outline"><i class="fab fa-facebook"></i> View Full Catalogue on Facebook</a>
+      <a href="https://wa.me/23057012560?text=Hi%20Wassim%20%26%20K7%2C%20I%20would%20like%20to%20see%20more%20properties." target="_blank" class="btn btn-primary" style="margin-left:8px"><i class="fab fa-whatsapp"></i> Ask for More Properties</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Our Team</div>
+      <h2>The people behind the service</h2>
+      <p>Senior expertise you'll actually speak to — not a call centre.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar"><img src="images/wassim.jpg" alt="Wassim" onerror="this.style.display='none';this.parentNode.textContent='W'"></div>
+        <h3>Wassim</h3>
+        <div class="role">Principal Consultant</div>
+        <p>Wassim leads our consultancy, valuation, and construction advisory services. With deep experience in the Mauritian market across residential, investment, and build projects, he advises clients on everything from plot selection to negotiation and post-purchase planning.</p>
+        <div class="team-skills">
+          <span class="skill">Valuation</span>
+          <span class="skill">Investment Advisory</span>
+          <span class="skill">Build Advisory</span>
+          <span class="skill">Negotiation</span>
+          <span class="skill">Market Analysis</span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><img src="images/kessaven.jpg" alt="Kessaven" onerror="this.style.display='none';this.parentNode.textContent='K'"></div>
+        <h3>Kessaven</h3>
+        <div class="role">Property Operations Lead</div>
+        <p>Kessaven manages our property portfolio, rental operations, and client coordination. He oversees listings, guest management, and the day-to-day running of managed properties — ensuring owners and tenants get a smooth, professional experience.</p>
+        <div class="team-skills">
+          <span class="skill">Rental Management</span>
+          <span class="skill">Client Relations</span>
+          <span class="skill">Property Search</span>
+          <span class="skill">Coordination</span>
+          <span class="skill">KYC & Compliance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD FORM SECTION -->
+<section id="build">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Build With Us</div>
+      <h2>You own the land. We help you build it right.</h2>
+      <p>From plot review and design to construction supervision and finishing — we guide the entire build so you don't overspend, overrun, or under-deliver.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 style="font-size:16px;margin-bottom:16px;color:var(--text)">What we do for you</h3>
+        <div class="contact-item"><i class="fas fa-map-location-dot"></i><div><div class="label">01 · Plot Review</div><div class="value">We verify zoning, access, drainage, and resale potential before you commit.</div></div></div>
+        <div class="contact-item"><i class="fas fa-drafting-compass"></i><div><div class="label">02 · Design & Costing</div><div class="value">Design coordination and transparent cost estimation per m².</div></div></div>
+        <div class="contact-item"><i class="fas fa-hard-hat"></i><div><div class="label">03 · Construction Supervision</div><div class="value">Contractor selection, milestone checks, and quality oversight.</div></div></div>
+        <div class="contact-item"><i class="fas fa-key"></i><div><div class="label">04 · Handover & Rental</div><div class="value">Snag list, handover, and optional rental placement once complete.</div></div></div>
+      </div>
+      <div class="contact-info">
+        <h3 style="font-size:16px;margin-bottom:16px;color:var(--text)">Send us your build enquiry</h3>
+        <div class="form-group"><label>Your name</label><input type="text" id="bfName" placeholder="Full name"></div>
+        <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" id="bfPhone" placeholder="+230 ..."></div>
+        <div class="form-group"><label>Project type</label>
+          <select id="bfType"><option>New build</option><option>Renovation</option><option>Extension</option><option>Consultation only</option></select>
+        </div>
+        <div class="form-group"><label>Brief description</label><textarea id="bfDesc" placeholder="e.g. 3-bedroom villa on 15 perches in Pereybere, budget Rs 6M"></textarea></div>
+        <div class="result-actions" style="margin-top:6px">
+          <button class="btn btn-primary" onclick="sendBuildToWA()"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+          <button class="btn btn-outline" onclick="sendBuildToEmail()"><i class="fas fa-envelope"></i> Send via Email</button>
+        </div>
+        <div style="margin-top:14px;font-size:12px;color:var(--text-muted);padding:10px;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border)">
+          <i class="fas fa-shield-halved" style="color:var(--accent)"></i> Your details are only used to respond to your enquiry. No spam, ever.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow">Get In Touch</div>
+      <h2>Speak to us directly</h2>
+      <p>We respond fast — WhatsApp is usually the quickest way to reach us.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item"><i class="fab fa-whatsapp"></i><div><div class="label">WhatsApp (1)</div><div class="value"><a href="https://wa.me/23057012560" target="_blank">+230 5701 2560</a></div></div></div>
+        <div class="contact-item"><i class="fab fa-whatsapp"></i><div><div class="label">WhatsApp (2)</div><div class="value"><a href="https://wa.me/23059237053" target="_blank">+230 5923 7053</a></div></div></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:bookings@superdealsmauritius.com">bookings@superdealsmauritius.com</a></div></div></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><div class="label">Office</div><div class="value">Behind Oasis 2, Pereybere, Mauritius</div></div></div>
+        <div class="contact-item"><i class="fas fa-clock"></i><div><div class="label">Hours</div><div class="value">Mon–Sat · 9:00–18:00 (WhatsApp 7 days)</div></div></div>
+      </div>
+      <div class="contact-info">
+        <h3 style="font-size:16px;margin-bottom:16px;color:var(--text)">Quick message</h3>
+        <div class="form-group"><label>Your name</label><input type="text" id="cmName" placeholder="Full name"></div>
+        <div class="form-group"><label>Phone / Email</label><input type="text" id="cmContact" placeholder="How can we reach you?"></div>
+        <div class="form-group"><label>Message</label><textarea id="cmMsg" placeholder="What can we help you with?"></textarea></div>
+        <div class="result-actions">
+          <button class="btn btn-primary" onclick="sendQuickWA()"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+          <button class="btn btn-outline" onclick="sendQuickEmail()"><i class="fas fa-envelope"></i> Send via Email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Wassim & K7 Property Services</h4>
+        <p>Real estate consultancy, valuation, renovation advisory, construction coordination, and rental management — based in Pereybere, serving all of Mauritius.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/23057012560" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/superdealsmauritius" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://tiktok.com/@superdealsmauritius" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="mailto:bookings@superdealsmauritius.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Property Consultancy</a>
+        <a href="#services">Property Valuation</a>
+        <a href="#tools">Property Search</a>
+        <a href="#build">Build With Us</a>
+        <a href="#services">Renovation Advisory</a>
+        <a href="#services">Rental Management</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="#tools">Property Estimator</a>
+        <a href="#tools">Financing Calculator</a>
+        <a href="#tools">Rental ROI</a>
+        <a href="#tools">KYC Pre-Qualification</a>
+        <a href="#properties">My Wishlist</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="https://wa.me/23057012560" target="_blank">+230 5701 2560</a>
+        <a href="https://wa.me/23059237053" target="_blank">+230 5923 7053</a>
+        <a href="mailto:bookings@superdealsmauritius.com">bookings@superdealsmauritius.com</a>
+        <p style="margin-top:8px">Behind Oasis 2<br>Pereybere, Mauritius</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Wassim & K7 Property Services. All rights reserved.</span>
+      <span>Real Estate Mauritius · Consultancy · Build · Renovation · Estimation</span>
+    </div>
+    <div class="footer-seo">
+      Real estate Mauritius · Property valuation Mauritius · Property consultancy Mauritius · Build house Mauritius · Renovation Mauritius · Buy property Mauritius · Rent villa Mauritius · Best places to live Mauritius · Mauritius real estate 2026 · Villa Grand Baie · Apartment Pereybere · Tamarin property · Flic en Flac rentals · Moka property · Investment property Mauritius · Foreign buyer Mauritius · Residence permit Mauritius · Build with us Mauritius · Property estimator Mauritius · Rental yield Mauritius
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/23057012560" target="_blank" class="wa-float" title="WhatsApp us"><i class="fab fa-whatsapp"></i></a>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-function copyAccount() {
-    const text = document.getElementById("accNum").innerText;
-    navigator.clipboard.writeText(text);
-    alert("Account number copied successfully.");
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============ PROPERTY DATA (5 featured) ============ */
+const properties = [
+  {
+    id:'p1',
+    title:'Grand Baie Villa — Pool & Jacuzzi',
+    location:'Grand Baie',
+    price:'Contact for pricing',
+    badge:'Rent',
+    type:'rent',
+    summary:'Private holiday villa in the heart of Grand Baie with private pool, jacuzzi, and premium guest amenities. Highly rated.',
+    image:'images/superdeals-grandbaie-luxury.jpg',
+    fb:'https://www.facebook.com/superdealsmauritius',
+    tt:'https://tiktok.com/@superdealsmauritius'
+  },
+  {
+    id:'p2',
+    title:'End-of-Winter Special — Grand Baie',
+    location:'Grand Baie',
+    price:'Rs 2,500 / night',
+    badge:'Rent',
+    type:'rent',
+    summary:'2-bedroom apartment with fully equipped kitchen, washing machine, Wi-Fi, common pool, parking. 2–4 persons. 6-min drive to beach.',
+    image:'images/superdeals-grandbaie-october.jpg',
+    fb:'https://www.facebook.com/superdealsmauritius',
+    tt:'https://tiktok.com/@superdealsmauritius'
+  },
+  {
+    id:'p3',
+    title:'Pereybere Private Villa — 4 Bedrooms',
+    location:'Pereybere',
+    price:'Contact for pricing',
+    badge:'Rent',
+    type:'rent',
+    summary:'Modern 4-bedroom private villa, 10-minute walk to the beach. Air-conditioned, quality furnishings, and comfortable living spaces.',
+    image:'images/superdeals-pereybere-villa.jpg',
+    fb:'https://www.facebook.com/superdealsmauritius',
+    tt:'https://tiktok.com/@superdealsmauritius'
+  },
+  {
+    id:'p4',
+    title:'Riambel Private Villa — 6 Bedrooms',
+    location:'Riambel',
+    price:'Contact for pricing',
+    badge:'Rent',
+    type:'rent',
+    summary:'Six-bedroom holiday villa in the south with private pool, spacious living areas, and fully equipped kitchen. 10-minute walk to the beach.',
+    image:'images/superdeals-riambel-villa.jpg',
+    fb:'https://www.facebook.com/superdealsmauritius',
+    tt:'https://tiktok.com/@superdealsmauritius'
+  },
+  {
+    id:'p5',
+    title:'Residential Land Plots — Grand Baie',
+    location:'Grand Baie',
+    price:'Rs 2.6M – Rs 3.3M',
+    badge:'Sale',
+    type:'sale',
+    summary:'11 residential plots, 6–7 perches each, with approved building permits. 2-minute drive to Domaine Alizées. Rue de la Paie, Petit Raffray.',
+    image:'images/wa1.jpg',
+    fb:'https://www.facebook.com/superdealsmauritius',
+    tt:'https://tiktok.com/@superdealsmauritius'
+  }
+];
+
+/* ============ RENDER PROPERTIES ============ */
+function renderProperties(){
+  const grid = document.getElementById('propsGrid');
+  const wishlist = getWishlist();
+  grid.innerHTML = properties.map(p => {
+    const saved = wishlist.includes(p.id);
+    return `
+    <div class="prop">
+      <div class="prop-img" style="background-image:url('${p.image}'),url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22250%22><rect fill=%22%2325252e%22 width=%22400%22 height=%22250%22/><text x=%22200%22 y=%22130%22 fill=%22%23c9a227%22 font-family=%22Segoe UI%22 font-size=%2216%22 font-weight=%22600%22 text-anchor=%22middle%22>Wassim %26 K7</text></svg>')">
+        <span class="prop-badge">${p.badge}</span>
+        <button class="prop-heart ${saved?'active':''}" onclick="toggleWishlist('${p.id}',this)" title="Save to wishlist"><i class="fa${saved?'s':'r'} fa-heart"></i></button>
+      </div>
+      <div class="prop-body">
+        <div class="prop-loc"><i class="fas fa-map-marker-alt"></i>${p.location}</div>
+        <div class="prop-title">${p.title}</div>
+        <div class="prop-price">${p.price}</div>
+        <div class="prop-feat">${p.summary}</div>
+        <div class="prop-actions">
+          <a href="${p.fb}" target="_blank"><i class="fab fa-facebook-f"></i> FB</a>
+          <a href="${p.tt}" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+          <a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi Wassim & K7, I am interested in: '+p.title)}" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="mailto:bookings@superdealsmauritius.com?subject=${encodeURIComponent('Inquiry: '+p.title)}"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
 }
+
+/* ============ WISHLIST (localStorage) ============ */
+function getWishlist(){
+  try { return JSON.parse(localStorage.getItem('wk7_wishlist') || '[]'); } catch(e){ return []; }
+}
+function saveWishlist(list){
+  try { localStorage.setItem('wk7_wishlist', JSON.stringify(list)); } catch(e){}
+}
+function toggleWishlist(id, btn){
+  let list = getWishlist();
+  const i = list.indexOf(id);
+  if(i>=0){ list.splice(i,1); btn.classList.remove('active'); btn.innerHTML='<i class="far fa-heart"></i>'; showToast('Removed from wishlist'); }
+  else { list.push(id); btn.classList.add('active'); btn.innerHTML='<i class="fas fa-heart"></i>'; showToast('Saved to wishlist'); }
+  saveWishlist(list);
+  renderWishlistPanel();
+}
+function clearWishlist(){
+  saveWishlist([]); renderProperties(); renderWishlistPanel(); showToast('Wishlist cleared');
+}
+function renderWishlistPanel(){
+  const box = document.getElementById('wishlistResult');
+  const ids = getWishlist();
+  if(!ids.length){
+    box.innerHTML = '<div class="result-empty">Your wishlist is empty. Tap the heart icon on any property to save it here.</div>';
+    return;
+  }
+  const saved = properties.filter(p=>ids.includes(p.id));
+  let html = `<div style="margin-bottom:12px;font-size:12.5px;color:var(--text-muted)">You have <strong style="color:var(--accent)">${saved.length}</strong> saved propert${saved.length===1?'y':'ies'}.</div>`;
+  saved.forEach(p => {
+    html += `<div class="result-line"><span>${p.title}<br><small style="color:var(--text-dim)">${p.location} · ${p.price}</small></span><a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi, I am interested in: '+p.title)}" target="_blank" class="btn btn-sm btn-outline">Enquire</a></div>`;
+  });
+  const msg = 'Hi Wassim & K7, I am interested in these properties:\n' + saved.map(p=>'• '+p.title+' ('+p.location+')').join('\n');
+  html += `<div class="result-actions"><a href="https://wa.me/23057012560?text=${encodeURIComponent(msg)}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Send my wishlist via WhatsApp</a></div>`;
+  box.innerHTML = html;
+}
+
+/* ============ TOAST ============ */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._t); t._t = setTimeout(()=>t.classList.remove('show'), 2200);
+}
+
+/* ============ TOOL TABS ============ */
+document.querySelectorAll('.tools-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tools-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tool-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tool).classList.add('active');
+    if(tab.dataset.tool==='wishlist') renderWishlistPanel();
+  });
+});
+
+/* ============ ESTIMATOR ============ */
+const landRates = {
+  'grand-baie':38000, 'pereybere':35000, 'pointe-aux-canonniers':40000,
+  'trou-aux-biches':22000, 'calodyne':20000, 'bain-boeuf':22000,
+  'tamarin':28000, 'flic-en-flac':16000, 'albion':13000,
+  'moka':11000, 'quatre-bornes':13000, 'belle-mare':15000,
+  'flacq':10000, 'riambel':6500, 'port-louis':24000
+};
+const buildCost = {'standard':25000,'good':35000,'luxury':50000,'premium':70000};
+const condMulti = {'new':1.0,'excellent':0.88,'good':0.72,'fair':0.55,'renovation':0.35};
+
+function runEstimator(){
+  const loc = document.getElementById('estLocation').value;
+  const land = parseFloat(document.getElementById('estLand').value)||0;
+  const built = parseFloat(document.getElementById('estBuilt').value)||0;
+  const quality = document.getElementById('estQuality').value;
+  const cond = document.getElementById('estCondition').value;
+  const age = parseFloat(document.getElementById('estAge').value)||0;
+
+  const landM2 = land * 42.21;
+  const landValue = landM2 * (landRates[loc]||15000);
+  const depreciation = Math.min(age * 0.015, 0.40);
+  const buildValue = built * (buildCost[quality]||35000) * (condMulti[cond]||0.7) * (1 - depreciation);
+  const total = landValue + buildValue;
+
+  const fmt = n => 'Rs ' + Math.round(n).toLocaleString('en-US');
+
+  const box = document.getElementById('estResult');
+  box.innerHTML = `
+    <div class="result-line"><span>Land area</span><span>${landM2.toLocaleString('en-US',{maximumFractionDigits:0})} m²</span></div>
+    <div class="result-line"><span>Land value (est.)</span><span>${fmt(landValue)}</span></div>
+    <div class="result-line"><span>Building area</span><span>${built} m²</span></div>
+    <div class="result-line"><span>Age depreciation applied</span><span>${(depreciation*100).toFixed(1)}%</span></div>
+    <div class="result-line"><span>Building value (est.)</span><span>${fmt(buildValue)}</span></div>
+    <div class="result-total"><span>Estimated total value</span><span>${fmt(total)}</span></div>
+    <div class="result-note">This is a market estimate based on average rates in the selected region. Actual values vary with road access, view, layout, finishing and market conditions. Contact us for a personalised valuation.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi Wassim & K7, I would like a formal valuation. Estimator result: '+fmt(total)+' ('+loc+', '+land+' perches, '+built+'m² built).')}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Request formal valuation</a>
+      <button class="btn btn-outline btn-sm" onclick="window.print()"><i class="fas fa-file-pdf"></i> Print / Save as PDF</button>
+    </div>`;
+}
+
+/* ============ FINANCING ============ */
+function runFinancing(){
+  const price = parseFloat(document.getElementById('finPrice').value)||0;
+  const downPct = parseFloat(document.getElementById('finDown').value)||0;
+  const rate = parseFloat(document.getElementById('finRate').value)||0;
+  const term = parseFloat(document.getElementById('finTerm').value)||1;
+
+  const down = price * downPct/100;
+  const loan = price - down;
+  const monthlyRate = rate/100/12;
+  const n = term*12;
+  const monthly = monthlyRate > 0 ? loan * monthlyRate / (1 - Math.pow(1+monthlyRate,-n)) : loan/n;
+  const totalPaid = monthly * n;
+  const totalInterest = totalPaid - loan;
+
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+  document.getElementById('finResult').innerHTML = `
+    <div class="result-line"><span>Down payment</span><span>${fmt(down)}</span></div>
+    <div class="result-line"><span>Loan amount</span><span>${fmt(loan)}</span></div>
+    <div class="result-line"><span>Term</span><span>${term} years (${n} months)</span></div>
+    <div class="result-total"><span>Monthly repayment</span><span>${fmt(monthly)}</span></div>
+    <div class="result-line" style="margin-top:12px"><span>Total interest</span><span>${fmt(totalInterest)}</span></div>
+    <div class="result-line"><span>Total amount paid</span><span>${fmt(totalPaid)}</span></div>
+    <div class="result-note">Indicative only. Actual terms depend on your bank and profile. We work with several local banks and can help arrange introductions.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${encodeURIComponent('Hi Wassim & K7, I would like help arranging a mortgage. Price '+fmt(price)+', down payment '+downPct+'%.')}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Discuss with us</a>
+    </div>`;
+}
+
+/* ============ ROI ============ */
+function runROI(){
+  const price = parseFloat(document.getElementById('roiPrice').value)||0;
+  const rent = parseFloat(document.getElementById('roiRent').value)||0;
+  const occ = parseFloat(document.getElementById('roiOcc').value)/100||0;
+  const expPct = parseFloat(document.getElementById('roiExp').value)/100||0;
+
+  const annualGross = rent * 12 * occ;
+  const annualExpenses = annualGross * expPct;
+  const annualNet = annualGross - annualExpenses;
+  const grossYield = (rent*12/price)*100;
+  const netYield = (annualNet/price)*100;
+  const payback = annualNet > 0 ? price/annualNet : 0;
+
+  const fmt = x => 'Rs ' + Math.round(x).toLocaleString('en-US');
+  document.getElementById('roiResult').innerHTML = `
+    <div class="result-line"><span>Annual gross income</span><span>${fmt(annualGross)}</span></div>
+    <div class="result-line"><span>Annual expenses</span><span>${fmt(annualExpenses)}</span></div>
+    <div class="result-line"><span>Annual net income</span><span>${fmt(annualNet)}</span></div>
+    <div class="result-total"><span>Net yield</span><span>${netYield.toFixed(2)}%</span></div>
+    <div class="result-line" style="margin-top:12px"><span>Gross yield</span><span>${grossYield.toFixed(2)}%</span></div>
+    <div class="result-line"><span>Payback period</span><span>${payback?payback.toFixed(1)+' years':'—'}</span></div>
+    <div class="result-note">Net yield above is after expenses and occupancy. Represents a stabilised long-term rental scenario — short-term rentals may achieve higher gross but higher costs.</div>
+  `;
+}
+
+/* ============ KYC ============ */
+function runKYC(){
+  const name = document.getElementById('kycName').value.trim();
+  const phone = document.getElementById('kycPhone').value.trim();
+  const email = document.getElementById('kycEmail').value.trim();
+  const nat = document.getElementById('kycNat').value.trim();
+  const res = document.getElementById('kycRes').value;
+  const purpose = document.getElementById('kycPurpose').value;
+  const budget = document.getElementById('kycBudget').value;
+  const time = document.getElementById('kycTime').value;
+
+  if(!name || !phone){ showToast('Please enter name and phone'); return; }
+
+  const lines = [
+    'KYC Pre-Qualification Summary',
+    '— Name: '+name,
+    '— Phone: '+phone,
+    '— Email: '+(email||'—'),
+    '— Nationality: '+(nat||'—'),
+    '— Residency: '+res,
+    '— Purpose: '+purpose,
+    '— Budget: '+(budget?'Rs '+budget:'—'),
+    '— Timeline: '+time
+  ];
+  const msg = encodeURIComponent('Hi Wassim & K7, here is my KYC summary:\n\n'+lines.join('\n'));
+
+  document.getElementById('kycResult').innerHTML = `
+    <div style="font-size:13.5px;color:var(--text-muted);line-height:1.8">
+      ${lines.map(l=>'<div>'+l+'</div>').join('')}
+    </div>
+    <div class="result-note">This summary helps us pre-qualify your enquiry. No sensitive documents are collected here — full KYC is handled privately by our team.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${msg}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Send via WhatsApp</a>
+      <a href="mailto:bookings@superdealsmauritius.com?subject=${encodeURIComponent('KYC Pre-Qualification — '+name)}&body=${msg}" class="btn btn-outline btn-sm"><i class="fas fa-envelope"></i> Send via Email</a>
+    </div>`;
+}
+
+/* ============ BUILD ENQUIRY (panel) ============ */
+function runBuildEnquiry(){
+  const name = document.getElementById('bName').value.trim();
+  const phone = document.getElementById('bPhone').value.trim();
+  const email = document.getElementById('bEmail').value.trim();
+  const type = document.getElementById('bType').value;
+  const land = document.getElementById('bLand').value;
+  const budget = document.getElementById('bBudget').value;
+  const time = document.getElementById('bTime').value;
+  const desc = document.getElementById('bDesc').value.trim();
+
+  if(!name || (!phone && !email)){ showToast('Enter name and phone/email'); return; }
+
+  const lines = [
+    'BUILD / RENOVATION ENQUIRY',
+    '— Name: '+name,
+    '— Phone: '+(phone||'—'),
+    '— Email: '+(email||'—'),
+    '— Project: '+type,
+    '— Land: '+(land?land+' perches':'—'),
+    '— Budget: '+(budget?'Rs '+budget:'—'),
+    '— Timeline: '+time,
+    '— Notes: '+(desc||'—')
+  ];
+  const msg = encodeURIComponent(lines.join('\n'));
+
+  document.getElementById('buildResult').innerHTML = `
+    <div style="font-size:13.5px;color:var(--text-muted);line-height:1.9">${lines.map(l=>'<div>'+l+'</div>').join('')}</div>
+    <div class="result-note">Choose how to send it — we'll respond within 24h on working days.</div>
+    <div class="result-actions">
+      <a href="https://wa.me/23057012560?text=${msg}" target="_blank" class="btn btn-primary btn-sm"><i class="fab fa-whatsapp"></i> Send via WhatsApp</a>
+      <a href="mailto:bookings@superdealsmauritius.com?subject=${encodeURIComponent('Build Enquiry — '+name)}&body=${msg}" class="btn btn-outline btn-sm"><i class="fas fa-envelope"></i> Send via Email</a>
+    </div>`;
+}
+
+/* ============ BUILD SECTION FORM ============ */
+function sendBuildToWA(){
+  const name = document.getElementById('bfName').value.trim();
+  const phone = document.getElementById('bfPhone').value.trim();
+  const type = document.getElementById('bfType').value;
+  const desc = document.getElementById('bfDesc').value.trim();
+  if(!name || !phone){ showToast('Enter name and phone'); return; }
+  const msg = encodeURIComponent(`BUILD ENQUIRY\nName: ${name}\nPhone: ${phone}\nProject: ${type}\nDetails: ${desc||'—'}`);
+  window.open('https://wa.me/23057012560?text='+msg,'_blank');
+}
+function sendBuildToEmail(){
+  const name = document.getElementById('bfName').value.trim();
+  const phone = document.getElementById('bfPhone').value.trim();
+  const type = document.getElementById('bfType').value;
+  const desc = document.getElementById('bfDesc').value.trim();
+  if(!name || !phone){ showToast('Enter name and phone'); return; }
+  const subject = encodeURIComponent('Build Enquiry — '+name);
+  const body = encodeURIComponent(`BUILD ENQUIRY\nName: ${name}\nPhone: ${phone}\nProject: ${type}\nDetails: ${desc||'—'}`);
+  window.location.href = `mailto:bookings@superdealsmauritius.com?subject=${subject}&body=${body}`;
+}
+
+/* ============ QUICK MESSAGE ============ */
+function sendQuickWA(){
+  const name = document.getElementById('cmName').value.trim();
+  const contact = document.getElementById('cmContact').value.trim();
+  const msg = document.getElementById('cmMsg').value.trim();
+  if(!name || !msg){ showToast('Enter name and message'); return; }
+  const text = encodeURIComponent(`MESSAGE\nName: ${name}\nContact: ${contact}\nMessage: ${msg}`);
+  window.open('https://wa.me/23057012560?text='+text,'_blank');
+}
+function sendQuickEmail(){
+  const name = document.getElementById('cmName').value.trim();
+  const contact = document.getElementById('cmContact').value.trim();
+  const msg = document.getElementById('cmMsg').value.trim();
+  if(!name || !msg){ showToast('Enter name and message'); return; }
+  const subject = encodeURIComponent('Website enquiry — '+name);
+  const body = encodeURIComponent(`Name: ${name}\nContact: ${contact}\nMessage: ${msg}`);
+  window.location.href = `mailto:bookings@superdealsmauritius.com?subject=${subject}&body=${body}`;
+}
+
+/* ============ INIT ============ */
+renderProperties();
+renderWishlistPanel();
 </script>
-</head>
-
-<body>
-    
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIONFUEL - The Brotherhood</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #111;
-            color: #fff;
-            line-height: 1.6;
-            padding-bottom: 120px; /* Space for fixed buttons on mobile */
-        }
-        
-        /* Demo content to show footer in context */
-        .demo-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .demo-content h1 {
-            color: #D4AF37;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-        }
-        
-        .demo-content p {
-            color: #aaa;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        /* Footer Styles */
-        .lionfuel-footer {
-            background-color: #0a0a0a;
-            color: #fff;
-            border-top: 3px solid #D4AF37;
-            padding: 40px 20px 20px;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-headline {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #222;
-        }
-        
-        .footer-headline h2 {
-            color: #D4AF37;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .footer-headline p {
-            color: #ccc;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        
-        .courses-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .course-card {
-            background-color: #151515;
-            border-radius: 8px;
-            padding: 20px;
-            border-left: 4px solid #D4AF37;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .course-title {
-            color: #fff;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .course-price {
-            background-color: #D4AF37;
-            color: #000;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .course-description {
-            color: #aaa;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        /* Fixed CTA Buttons for Mobile */
-        .fixed-cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px 20px;
-            background-color: rgba(10, 10, 10, 0.95);
-            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            border-top: 2px solid #D4AF37;
-        }
-        
-        .cta-button {
-            display: block;
-            text-align: center;
-            padding: 16px 20px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: #000;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #1da851;
-            transform: scale(1.03);
-        }
-        
-        .call-btn {
-            background-color: #D4AF37;
-            color: #000;
-        }
-        
-        .call-btn:hover {
-            background-color: #b8941f;
-            transform: scale(1.03);
-        }
-        
-        .brand-footer {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid #222;
-        }
-        
-        .brand-name {
-            color: #D4AF37;
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 5px;
-            letter-spacing: 1.5px;
-        }
-        
-        .brand-tagline {
-            color: #aaa;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .brand-mission {
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 10px;
-        }
-        
-        /* Desktop CTA Buttons (inside footer) */
-        .desktop-cta {
-            display: none;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            .fixed-cta-buttons {
-                display: none;
-            }
-            
-            .desktop-cta {
-                display: grid;
-            }
-            
-            .courses-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            body {
-                padding-bottom: 0;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .courses-section {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .footer-headline h2 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        .footer-note {
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #222;
-        }
-        
-        .whatsapp-icon {
-            margin-right: 8px;
-            font-size: 1.2rem;
-        }
-    </style>
-</head>
-<body>
-    <!-- Demo Content (not part of footer) -->
-    <div class="demo-content">
-        <h1>LIONFUEL - The Brotherhood</h1>
-        <p>Scroll down to see the footer with all training programs and call-to-action buttons.</p>
-        <p><i class="fas fa-arrow-down"></i> Scroll down to view the footer <i class="fas fa-arrow-down"></i></p>
-    </div>
-    
-    <!-- Main Footer -->
-    <footer class="lionfuel-footer">
-        <div class="footer-container">
-            <!-- Headline -->
-            <div class="footer-headline">
-                <h2>Invest in Yourself</h2>
-                <p>Every Course at Just Rs. 3000</p>
-                <p class="brand-tagline" style="margin-top: 10px; font-size: 1rem;">One price. Multiple paths. One code — the Code of Life.</p>
-            </div>
-            
-            <!-- Courses List -->
-            <div class="courses-section">
-                <div class="course-card">
-                    <div class="course-title">
-                        <span>Code of Life</span>
-                        <span class="course-price">Rs. 3000</span>
-                    </div>
-                    <p class="course-description">Spiritual, Mental, Public Speaking & Counseling Training. Master the fundamentals of personal transformation.</p>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-title">
-                        <span>Fitness Training Program</span>
-                        <span class="course-price">Rs. 3000</span>
-                    </div>
-                    <p class="course-description">Build physical strength and discipline with our comprehensive fitness and nutrition program.</p>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-title">
-                        <span>Gold Trading Mastery</span>
-                        <span class="course-price">Rs. 3000</span>
-                    </div>
-                    <p class="course-description">Learn to trade gold and other commodities with precision. Wealth-building strategies for disciplined minds.</p>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-title">
-                        <span>Real Estate Training Program</span>
-                        <span class="course-price">Rs. 3000</span>
-                    </div>
-                    <p class="course-description">Master property investment strategies and build long-term wealth through real estate.</p>
-                </div>
-            </div>
-            
-            <!-- Desktop CTA Buttons -->
-            <div class="desktop-cta">
-                <a href="https://wa.me/23052595505?text=I%20want%20to%20enroll%20in%20the%20Rs.%203000%20Lionfuel%20course." class="cta-button whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i> Buy via WhatsApp
-                </a>
-                <a href="https://wa.me/23052595505" class="cta-button call-btn" target="_blank">
-                    <i class="fas fa-phone-alt whatsapp-icon"></i> Book My Call
-                </a>
-            </div>
-            
-            <!-- Brand Footer -->
-            <div class="brand-footer">
-                <div class="brand-name">LIONFUEL</div>
-                <div class="brand-tagline">The Organization. The Brotherhood.</div>
-                <div class="brand-mission">Build strength. Build wealth. Build purpose.</div>
-            </div>
-            
-            <div class="footer-note">
-                &copy; LIONFUEL - The Brotherhood. All rights reserved. | Transform Your Life Today
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Fixed Mobile CTA Buttons -->
-    <div class="fixed-cta-buttons">
-        <a href="https://wa.me/23052595505?text=I%20want%20to%20enroll%20in%20the%20Rs.%203000%20Lionfuel%20course." class="cta-button whatsapp-btn" target="_blank">
-            <i class="fab fa-whatsapp whatsapp-icon"></i> Buy via WhatsApp
-        </a>
-        <a href="https://wa.me/23052595505" class="cta-button call-btn" target="_blank">
-            <i class="fas fa-phone-alt whatsapp-icon"></i> Book My Call
-        </a>
-    </div>
-    
-    <script>
-        // Add smooth scrolling for demo purposes
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Add animation to course cards on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const courseCards = document.querySelectorAll('.course-card');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            courseCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            });
-            
-            // WhatsApp link handling for desktop fallback
-            const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-            whatsappLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // If on desktop and not mobile, open WhatsApp Web
-                    if(window.innerWidth > 768 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                        // Ensure WhatsApp Web URL
-                        const url = this.href;
-                        if(url.includes('wa.me')) {
-                            // Keep the same URL as WhatsApp Web handles both
-                            // No modification needed
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
-    <footer>
-    <div class="container">
-
-        <h2>LionFuel Code – Secure Payment Gateway</h2>
-        <div class="price">Rs 3,000 / Month</div>
-
-        <div class="card">
-            <div class="label">Bank Details</div>
-            <p><strong>SBM Bank Account</strong></p>
-
-            <div class="account-box">
-                <div class="account-number" id="accNum">00110100385744</div>
-                <button onclick="copyAccount()">Copy</button>
-            </div>
-
-            <div class="info">
-                Complete your payment using the account above.<br>
-                Once payment is successful, take a screenshot of the transaction.
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="label">Payment Confirmation</div>
-            <p class="info">
-                Send your payment screenshot via WhatsApp to receive your official receipt.
-            </p>
-
-            <div class="whatsapp">
-                <a href="https://wa.me/23052595505" target="_blank">
-                    💬 Send Screenshot on WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <div class="brand">
-            © 2025 LionFuel Code • Secure • Trusted • Professional
-        </div>
-
-    </div>
-</footer>
 </html>
-
-
-
-
-
-
-
